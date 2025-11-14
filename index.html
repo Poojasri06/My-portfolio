@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pooja Sri | AI Student Portfolio</title>
+  <meta name="description" content="Portfolio of Pooja Sri — aspiring AI Engineer. Projects in ML, DL, CV, and Robotics. Contact and resume." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root { --brand:#a855f7; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial; background: #000; overflow-x: hidden; }
+
+    /* Loader */
+    #loader { position: fixed; inset: 0; display: grid; place-items: center; background:#000; color:#fff; z-index: 50; }
+    .dot { width: 10px; height: 10px; margin: 6px; border-radius: 9999px; background: var(--brand); animation: bounce 0.6s infinite alternate; }
+    .dot:nth-child(2){ animation-delay: .2s; } .dot:nth-child(3){ animation-delay:.4s; }
+    @keyframes bounce { 0%{transform:translateY(0)} 100%{transform:translateY(-12px)} }
+
+    /* Background Particles */
+    #particles-js, #tech-grid { position: fixed; inset: 0; z-index: -2; }
+    #tech-grid {
+      background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Sparkle cursor */
+    .sparkle {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+      pointer-events: none;
+      animation: sparkleAnim 0.8s linear forwards;
+      z-index: 9999;
+    }
+    @keyframes sparkleAnim {
+      0% { transform: scale(1); opacity:1; }
+      100% { transform: scale(0.5); opacity:0; }
+    }
+
+    /* Accessibility skip link */
+    .skip-link { position:absolute; left:-999px; }
+    .skip-link:focus { position: fixed; left: 1rem; top: 1rem; background:#111827; color:#fff; padding:0.5rem; border-radius:0.5rem; z-index:60; }
+  </style>
+</head>
+<body class="text-white">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Loader -->
+  <div id="loader" aria-hidden="true">
+    <div class="flex items-center" role="status" aria-label="Loading">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- Background -->
+  <div id="tech-grid"></div>
+  <div id="particles-js" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 inset-x-0 z-40 bg-black/70 backdrop-blur border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="font-extrabold tracking-tight text-xl text-purple-400">Pooja Sri</a>
+      <nav class="hidden sm:block">
+        <ul class="flex items-center gap-6 text-sm text-gray-300">
+          <li><a class="hover:text-purple-400" href="#about">About</a></li>
+          <li><a class="hover:text-purple-400" href="#skills">Skills</a></li>
+          <li><a class="hover:text-purple-400" href="#experience">Experience</a></li>
+          <li><a class="hover:text-purple-400" href="#projects">Projects</a></li>
+          <li><a class="hover:text-purple-400" href="#resume">Resume</a></li>
+          <li><a class="hover:text-purple-400" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="pt-16">
+    <!-- HERO -->
+    <section id="home" class="min-h-[80vh] grid place-items-center text-center px-6" data-aos="fade-up">
+      <div class="max-w-3xl">
+        <p class="text-sm uppercase tracking-[.2em] text-gray-400">Aspiring AI Engineer</p>
+        <h1 class="mt-3 text-5xl sm:text-6xl font-extrabold text-purple-300">Hi, I'm Pooja Sri</h1>
+        <p class="mt-4 text-gray-300">I build ML/DL projects, computer vision apps, and hobby robots. I love turning ideas into useful, user-friendly tools.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="#projects" class="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-700">View Projects</a>
+          <a href="#contact" class="px-6 py-3 rounded-xl border border-purple-600 hover:bg-purple-700/20">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-16 px-6" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 items-center">
+        <div class="md:col-span-1">
+          <img src="assets/profile.jpg" alt="Portrait of Pooja Sri" class="w-48 h-48 object-cover rounded-2xl ring-1 ring-white/10 mx-auto" />
+        </div>
+        <div class="md:col-span-2">
+          <h2 class="text-3xl font-bold text-purple-300">About Me</h2>
+          <p class="mt-4 text-gray-300">I'm <span class="text-purple-400 font-semibold">Pooja Sri</span>, an AI & ML student exploring Machine Learning, Deep Learning, Computer Vision, and Robotics. My projects range from an AI skincare advisor to an Arduino-based humanoid robot. I enjoy building end-to-end solutions that are practical and easy to use.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-16 px-6 bg-white/5" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-purple-300">Skills & Tools</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl p-6 bg-black/40 border border-white/10">
+            <h3 class="font-semibold text-purple-400">AI & ML</h3>
+            <ul class="mt-3 text-gray-300 list-disc list-inside">
+              <li>Python, NumPy, Pandas, Matplotlib, Seaborn</li>
+              <li>Scikit-learn, SciPy, StatsModels</li>
+              <li>Tensorflow, Keras, PyTorch, CNN, RNN, LSTM, Transformers</li>
+              <li>NLP (NLTK, SpaCy, TextBlob)</li>
+              <li>PyTorch, TensorFlow, scikit-learn</li>
+              <li>Computer Vision (OpenCV)</li>
+              <li>NLP basics, neural network vissualization</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl p-6 bg-black/40 border border-white/10">
+            <h3 class="font-semibold text-purple-400">Dev & Tools</h3>
+            <ul class="mt-3 text-gray-300 list-disc list-inside">
+              <li>Git & GitHub, Streamlit, Flask</li>
+              <li>SQL, Model Deployment basics, html, css, js</li>
+              <li>Arduino, Sensors & Motor Control</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl p-6 bg-black/40 border border-white/10">
+            <h3 class="font-semibold text-purple-400">Soft Skills</h3>
+            <ul class="mt-3 text-gray-300 list-disc list-inside">
+              <li>Creative Thinking</li>
+              <li>Problem Solving</li>
+              <li>Team Collaboration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Experience -->
+    <section id="Experience" class="py-16 px-6 bg-white/5" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-purple-300">Experience</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl p-6 bg-black/40 border border-white/10">
+            <h3 class="font-semibold text-purple-400">Prinston Smart Engineers-Onsite(Banglore)</h3>
+            <ul class="mt-3 text-gray-300 list-disc list-inside">
+              <li>ML-Intern</li>
+              <li>Build and Deployed a predictive MLmodel for titanic survival analysis, Handling data, Preprocessing, feature engineering and Evaluation</li>
+              <li>analysed datasets for age, gender, class and fare ccorrellations, improving model insights</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl p-6 bg-black/40 border border-white/10">
+            <h3 class="font-semibold text-purple-400">intraq Software Technologies-remote</h3>
+            <ul class="mt-3 text-gray-300 list-disc list-inside">
+              <li>Full stack web development</li>
+              <li>developed a crud based website using react.js, node.js, HTML/css, and Javascript</li>
+              <li>Gained hands-on experience in full-stack deployment and version controll</li>
+           </ul>
+          </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-16 px-6" data-aos="fade-up">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-purple-300">Featured Projects</h2>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Aura Derm -->
+          <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+            <div class="h-40 bg-cover bg-center" style="background-image:url('assets/aura-derm.jpg')"></div>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold text-white">Aura Derm — AI Skincare Advisor</h3>
+              <p class="mt-2 text-sm text-gray-300">Detects facial skin concerns and recommends products and diet.</p>
+              <div class="mt-4 flex gap-3">
+                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/Poojasri06/AuraDerm" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </article>
+          <!-- Humanoid Robot -->
+          <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+            <div class="h-40 bg-cover bg-center" style="background-image:url('assets/robot.jpg')"></div>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold text-white">Mini Humanoid Robot</h3>
+              <p class="mt-2 text-sm text-gray-300">Arduino robot with sensors and robotic arm.</p>
+              <div class="mt-4 flex gap-3">
+                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/Poojasri06" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </article>
+          <!-- Deepfake -->
+          <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+            <div class="h-40 bg-cover bg-center" style="background-image:url('assets/deepfake.png')"></div>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold text-white">Deepfake Video Detection</h3>
+              <p class="mt-2 text-sm text-gray-300">Detects face-swap deepfakes with CNN/LSTM.</p>
+              <div class="mt-4 flex gap-3">
+                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/Poojasri06" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </article>
+          <!-- Titanic -->
+          <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+            <div class="h-40 bg-cover bg-center" style="background-image:url('assets/titanic.jpg')"></div>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold text-white">Titanic Survival Prediction</h3>
+              <p class="mt-2 text-sm text-gray-300">ML classification using passenger data.</p>
+              <div class="mt-4 flex gap-3">
+                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/Poojasri06" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </article>
+          <!-- Hand Speak-->
+           <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+            <div class="h-40 bg-cover bg-center" style="background-image:url('assets/hand_speak.png')"></div>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold text-white">Hand Speak</h3>
+              <p class="mt-2 text-sm text-gray-300">ML Model that converts hand gestures into voice and text in the live camera</p>
+              <div class="mt-4 flex gap-3">
+                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/Poojasri06" target="_blank">GitHub</a>
+        </div>
+      </div>
+      </article>
+            <!-- Smart waste management -->
+             <article class="rounded 2xl overflow-hidden bg-white/5 border border-white/10">
+              <div class="h-40 bg-colour bg-center" style="background-image:url('assets/Bin2Basket')"></div>
+              <diV class=""p-5>
+                <h3 class="text-lg font-semibold text-white">Bin2Basket</h3>
+                <p class="mt-2 text-sm text-gray-300">A Smart waste management model thet converts waste points into discount copuns</p>
+                <div class="mt-4 flex gap-3" ></div>
+                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/poojasri06" target="_blank">GitHub</a>
+              </diV>
+             </article>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="py-16 px-6 bg-white/5" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-purple-300">Resume</h2>
+        <p class="mt-3 text-gray-300">Download my resume as PDF</p>
+        <a href="assets/PoojaSri_Resume.pdf" download class="mt-5 inline-flex px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-700">Download Resume</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16 px-6" data-aos="fade-up">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-purple-300">Contact Me</h2>
+        <p class="mt-2 text-gray-400">Email: <a class="text-purple-400 underline" href="mailto:poojasrikumar006@gmail.com">poojasrikumar006@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 text-center py-6 text-gray-400 text-sm">
+    © <span id="year"></span> Pooja Sri — AI Portfolio
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles:{ number:{value:40}, color:{value:"#a855f7"}, shape:{type:"circle"},
+      opacity:{value:.35}, size:{value:2}, line_linked:{enable:true, distance:120, color:"#a855f7", opacity:.2, width:1}, move:{enable:true, speed:1} },
+      interactivity:{ events:{ onhover:{enable:true, mode:"grab"} }, modes:{ grab:{distance:140,line_linked:{opacity:.3}} } }, retina_detect:true
+    });
+    // Loader hide
+    window.addEventListener('load',()=>{ setTimeout(()=>{ document.getElementById('loader').style.display='none'; },500); });
+    // Year
+    document.getElementById('year').textContent=new Date().getFullYear();
+    // Cursor sparkle
+    document.addEventListener("mousemove", e=>{
+      let s=document.createElement("div");
+      s.className="sparkle";
+      s.style.left=e.pageX+"px";
+      s.style.top=e.pageY+"px";
+      document.body.appendChild(s);
+      setTimeout(()=>s.remove(),800);
+    });
+  </script>
+</body>
+</html>

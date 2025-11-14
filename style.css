@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pooja | AI Engineer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
+  <div class="min-h-screen flex flex-col items-center justify-center p-6">
+    <h1 class="text-4xl font-bold mb-4">Hi, I’m Pooja</h1>
+    <p class="text-lg text-gray-300">Aspiring AI Engineer | Robotics Enthusiast</p>
+
+    <!-- Audio Greeting -->
+    <audio autoplay>
+      <source src="assets/pooja-intro.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Project Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 w-full max-w-4xl">
+      <div class="bg-gray-800 p-6 rounded-2xl shadow-md">
+        <h2 class="text-2xl font-semibold">Aura Derm – AI Skincare Advisor</h2>
+        <p class="mt-2 text-gray-400">Detects skin problems and gives personalized skincare advice.</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-2xl shadow-md">
+        <h2 class="text-2xl font-semibold">Mini Humanoid Robot</h2>
+        <p class="mt-2 text-gray-400">Arduino-based robot with sensors and motor control.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
