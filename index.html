@@ -73,7 +73,7 @@
         <ul class="flex items-center gap-6 text-sm text-gray-300">
           <li><a class="hover:text-purple-400" href="#about">About</a></li>
           <li><a class="hover:text-purple-400" href="#skills">Skills</a></li>
-          <li><a class="hover:text-purple-400" href="#experience">Experience</a></li>
+          <li><a class="hover:text-purple-400" href="#Experience">Experience</a></li>
           <li><a class="hover:text-purple-400" href="#projects">Projects</a></li>
           <li><a class="hover:text-purple-400" href="#resume">Resume</a></li>
           <li><a class="hover:text-purple-400" href="#contact">Contact</a></li>
@@ -178,7 +178,7 @@
         <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Aura Derm -->
           <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-            <div class="h-40 bg-cover bg-center" style="background-image:url('assets/aura-derm.jpg')"></div>
+            <div class="h-40 bg-cover bg-center" style="background-image:url('./assets/aura-derm.jpg')"></div>
             <div class="p-5">
               <h3 class="text-lg font-semibold text-white">Aura Derm — AI Skincare Advisor</h3>
               <p class="mt-2 text-sm text-gray-300">Detects facial skin concerns and recommends products and diet.</p>
@@ -189,7 +189,7 @@
           </article>
           <!-- Humanoid Robot -->
           <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-            <div class="h-40 bg-cover bg-center" style="background-image:url('assets/robot.jpg')"></div>
+            <div class="h-40 bg-cover bg-center" style="background-image:url('./assets/robot.jpg')"></div>
             <div class="p-5">
               <h3 class="text-lg font-semibold text-white">Mini Humanoid Robot</h3>
               <p class="mt-2 text-sm text-gray-300">Arduino robot with sensors and robotic arm.</p>
@@ -200,7 +200,7 @@
           </article>
           <!-- Deepfake -->
           <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-            <div class="h-40 bg-cover bg-center" style="background-image:url('assets/deepfake.png')"></div>
+            <div class="h-40 bg-cover bg-center" style="background-image:url('./assets/deepfake.png')"></div>
             <div class="p-5">
               <h3 class="text-lg font-semibold text-white">Deepfake Video Detection</h3>
               <p class="mt-2 text-sm text-gray-300">Detects face-swap deepfakes with CNN/LSTM.</p>
@@ -211,7 +211,7 @@
           </article>
           <!-- Titanic -->
           <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-            <div class="h-40 bg-cover bg-center" style="background-image:url('assets/titanic.jpg')"></div>
+            <div class="h-40 bg-cover bg-center" style="background-image:url('./assets/titanic.jpg')"></div>
             <div class="p-5">
               <h3 class="text-lg font-semibold text-white">Titanic Survival Prediction</h3>
               <p class="mt-2 text-sm text-gray-300">ML classification using passenger data.</p>
@@ -222,7 +222,7 @@
           </article>
           <!-- Hand Speak-->
            <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-            <div class="h-40 bg-cover bg-center" style="background-image:url('assets/hand_speak.png')"></div>
+            <div class="h-40 bg-cover bg-center" style="background-image:url('./assets/hand_speak.png')"></div>
             <div class="p-5">
               <h3 class="text-lg font-semibold text-white">Hand Speak</h3>
               <p class="mt-2 text-sm text-gray-300">ML Model that converts hand gestures into voice and text in the live camera</p>
@@ -232,15 +232,23 @@
       </div>
       </article>
             <!-- Smart waste management -->
-             <article class="rounded 2xl overflow-hidden bg-white/5 border border-white/10">
-              <div class="h-40 bg-colour bg-center" style="background-image:url('assets/Bin2Basket')"></div>
-              <diV class=""p-5>
-                <h3 class="text-lg font-semibold text-white">Bin2Basket</h3>
-                <p class="mt-2 text-sm text-gray-300">A Smart waste management model thet converts waste points into discount copuns</p>
-                <div class="mt-4 flex gap-3" ></div>
-                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/poojasri06" target="_blank">GitHub</a>
-              </diV>
-             </article>
+<article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+  <div class="h-40 bg-cover bg-center"
+       style="background-image:url('./assets/bin2basket.jpg')"></div>
+  <div class="p-5">
+    <h3 class="text-lg font-semibold text-white">Bin2Basket</h3>
+    <p class="mt-2 text-sm text-gray-300">
+      Smart waste management system converting waste points into discount coupons.
+    </p>
+    <div class="mt-4">
+      <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm"
+         href="https://github.com/Poojasri06" target="_blank">
+        GitHub
+      </a>
+    </div>
+  </div>
+</article>
+
     </section>
 
     <!-- RESUME -->
@@ -248,7 +256,7 @@
       <div class="max-w-6xl mx-auto text-center">
         <h2 class="text-3xl font-bold text-purple-300">Resume</h2>
         <p class="mt-3 text-gray-300">Download my resume as PDF</p>
-        <a href="assets/PoojaSri_Resume.pdf" download class="mt-5 inline-flex px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-700">Download Resume</a>
+        <a href="./assets/PoojaSri_Resume.pdf" download class="mt-5 inline-flex px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-700">Download Resume</a>
       </div>
     </section>
 
@@ -291,3 +299,4 @@
   </script>
 </body>
 </html>
+
