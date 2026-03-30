@@ -6,18 +6,34 @@
   <meta http-equiv="Expires" content="0" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pooja Sri | AI Student Portfolio</title>
-  <meta name="description" content="Portfolio of Pooja Sri — aspiring AI Engineer. Projects in ML, DL, CV, and Robotics. Contact and resume." />
-  <meta name="theme-color" content="#000000" />
+  <title>Pooja Sri | AI, ML and Data Portfolio</title>
+  <meta name="description" content="Portfolio of Pooja Sri, aspiring AI Engineer. Projects, research, internships, and freelance work in AI, ML, NLP, and full-stack development." />
+  <meta name="theme-color" content="#0B0F14" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
-    :root { --brand:#a855f7; }
+    :root {
+      --bg-0: #0b0f14;
+      --bg-1: #121a23;
+      --text-main: #eaf2ff;
+      --text-muted: #8ca0b8;
+      --brand: #00d1ff;
+      --accent: #a3ff12;
+    }
     html { scroll-behavior: smooth; }
-    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial; background: #000; overflow-x: hidden; }
+    body {
+      font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(0, 209, 255, 0.16), transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(163, 255, 18, 0.08), transparent 40%),
+        linear-gradient(160deg, var(--bg-0), var(--bg-1));
+      overflow-x: hidden;
+    }
+    h1, h2, h3, .brand-title { font-family: "Space Grotesk", "IBM Plex Sans", sans-serif; letter-spacing: 0.01em; }
 
     /* Loader */
     #loader { position: fixed; inset: 0; display: grid; place-items: center; background:#000; color:#fff; z-index: 50; }
@@ -28,9 +44,10 @@
     /* Background Particles */
     #particles-js, #tech-grid { position: fixed; inset: 0; z-index: -2; }
     #tech-grid {
-      background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 60px 60px;
+      background-image: linear-gradient(rgba(140,160,184,0.14) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(140,160,184,0.14) 1px, transparent 1px);
+      background-size: 64px 64px;
+      opacity: 0.35;
     }
 
     /* Sparkle cursor */
@@ -39,7 +56,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--brand);
+      background: var(--accent);
       pointer-events: none;
       animation: sparkleAnim 0.8s linear forwards;
       z-index: 9999;
@@ -52,6 +69,76 @@
     /* Accessibility skip link */
     .skip-link { position:absolute; left:-999px; }
     .skip-link:focus { position: fixed; left: 1rem; top: 1rem; background:#111827; color:#fff; padding:0.5rem; border-radius:0.5rem; z-index:60; }
+
+    /* Section header animation */
+    .section-title {
+      display: inline-block;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--brand), var(--accent));
+      transform-origin: left;
+      animation: drawLine 1s ease-out forwards;
+    }
+    @keyframes drawLine {
+      0% { transform: scaleX(0); opacity: 0.35; }
+      100% { transform: scaleX(1); opacity: 1; }
+    }
+
+    /* Timeline layout */
+    .timeline {
+      position: relative;
+      margin-top: 2rem;
+      padding-left: 2.5rem;
+      display: grid;
+      gap: 1.2rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.85rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(0, 209, 255, 0.8), rgba(163, 255, 18, 0.6));
+    }
+    .timeline-item {
+      position: relative;
+      border: 1px solid rgba(0, 209, 255, 0.2);
+      background: rgba(0, 0, 0, 0.32);
+      border-radius: 1rem;
+      padding: 1.25rem;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 9999px;
+      background: var(--accent);
+      left: -2.05rem;
+      top: 1.45rem;
+      box-shadow: 0 0 0 4px rgba(163, 255, 18, 0.15);
+    }
+
+    /* Project tech tags */
+    .tag-wrap { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.85rem; }
+    .tech-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      padding: 0.25rem 0.55rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(0, 209, 255, 0.35);
+      color: #c5f5ff;
+      background: rgba(0, 209, 255, 0.08);
+    }
   </style>
 </head>
 <body class="text-white">
@@ -69,17 +156,21 @@
   <div id="particles-js" aria-hidden="true"></div>
 
   <!-- NAVBAR -->
-  <header class="fixed top-0 inset-x-0 z-40 bg-black/70 backdrop-blur border-b border-white/10">
+  <header class="fixed top-0 inset-x-0 z-40 bg-[#0b0f14]/80 backdrop-blur border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#home" class="font-extrabold tracking-tight text-xl text-purple-400">Pooja Sri</a>
+      <a href="#home" class="brand-title font-bold tracking-tight text-xl text-cyan-300">Pooja Sri</a>
       <nav class="hidden sm:block">
-        <ul class="flex items-center gap-6 text-sm text-gray-300">
-          <li><a class="hover:text-purple-400" href="#about">About</a></li>
-          <li><a class="hover:text-purple-400" href="#skills">Skills</a></li>
-          <li><a class="hover:text-purple-400" href="#Experience">Experience</a></li>
-          <li><a class="hover:text-purple-400" href="#projects">Projects</a></li>
-          <li><a class="hover:text-purple-400" href="#resume">Resume</a></li>
-          <li><a class="hover:text-purple-400" href="#contact">Contact</a></li>
+        <ul class="flex items-center gap-6 text-sm text-slate-300">
+          <li><a class="hover:text-cyan-300" href="#about">About</a></li>
+          <li><a class="hover:text-cyan-300" href="#skills">Skills</a></li>
+          <li><a class="hover:text-cyan-300" href="#experience">Experience</a></li>
+          <li><a class="hover:text-cyan-300" href="#projects">Projects</a></li>
+          <li><a class="hover:text-cyan-300" href="#research">Research</a></li>
+          <li><a class="hover:text-cyan-300" href="#achievements">Achievements</a></li>
+          <li><a class="hover:text-cyan-300" href="#education">Education</a></li>
+          <li><a class="hover:text-cyan-300" href="#freelance">Freelance</a></li>
+          <li><a class="hover:text-cyan-300" href="#resume">Resume</a></li>
+          <li><a class="hover:text-cyan-300" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -89,12 +180,12 @@
     <!-- HERO -->
     <section id="home" class="min-h-[80vh] grid place-items-center text-center px-6" data-aos="fade-up">
       <div class="max-w-3xl">
-        <p class="text-sm uppercase tracking-[.2em] text-gray-400">Aspiring AI Engineer</p>
-        <h1 class="mt-3 text-5xl sm:text-6xl font-extrabold text-purple-300">Hi, I'm Pooja Sri</h1>
-        <p class="mt-4 text-gray-300">I build ML/DL projects, computer vision apps, and hobby robots. I love turning ideas into useful, user-friendly tools.</p>
+        <p class="text-sm uppercase tracking-[.2em] text-slate-400">Aspiring AI Engineer</p>
+        <h1 class="mt-3 text-5xl sm:text-6xl font-bold text-cyan-200">Building Practical AI for Real People</h1>
+        <p class="mt-4 text-slate-300">I build machine learning and deep learning projects, computer vision applications, and robotics prototypes. I enjoy turning ideas into practical, user-friendly solutions.</p>
         <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="#projects" class="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-700">View Projects</a>
-          <a href="#contact" class="px-6 py-3 rounded-xl border border-purple-600 hover:bg-purple-700/20">Contact Me</a>
+          <a href="#projects" class="px-6 py-3 rounded-xl bg-cyan-500 text-[#081018] hover:bg-cyan-400">View Projects</a>
+          <a href="#contact" class="px-6 py-3 rounded-xl border border-lime-400/70 text-lime-300 hover:bg-lime-400/10">Contact Me</a>
         </div>
       </div>
     </section>
@@ -106,40 +197,39 @@
           <img src="assets/profile.jpg" alt="Portrait of Pooja Sri" class="w-48 h-48 object-cover rounded-2xl ring-1 ring-white/10 mx-auto" />
         </div>
         <div class="md:col-span-2">
-          <h2 class="text-3xl font-bold text-purple-300">About Me</h2>
-          <p class="mt-4 text-gray-300">I'm <span class="text-purple-400 font-semibold">Pooja Sri</span>, an AI & ML student exploring Machine Learning, Deep Learning, Computer Vision, and Robotics. My projects range from an AI skincare advisor to an Arduino-based humanoid robot. I enjoy building end-to-end solutions that are practical and easy to use.</p>
+          <h2 class="section-title text-3xl font-bold text-cyan-200">About Me</h2>
+          <p class="mt-4 text-slate-300">I'm <span class="text-cyan-300 font-semibold">Pooja Sri</span>, an AI and ML graduate exploring machine learning, deep learning, NLP, computer vision, and product-focused development. I am also a freelancer at my own organization, <a class="text-cyan-300 underline" href="https://poojasri06.github.io/igniq.solutions/igniq_portfolio.html" target="_blank" rel="noopener">igniq.solutions</a>.</p>
         </div>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="py-16 px-6 bg-white/5" data-aos="fade-up">
+    <section id="skills" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-purple-300">Skills & Tools</h2>
+        <h2 class="section-title text-3xl font-bold text-cyan-200">Skills & Tools</h2>
         <div class="mt-8 grid md:grid-cols-3 gap-6">
-          <div class="rounded-2xl p-6 bg-black/40 border border-white/10">
-            <h3 class="font-semibold text-purple-400">AI & ML</h3>
-            <ul class="mt-3 text-gray-300 list-disc list-inside">
+          <div class="rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+            <h3 class="font-semibold text-cyan-300">AI & ML</h3>
+            <ul class="mt-3 text-slate-300 list-disc list-inside">
               <li>Python, NumPy, Pandas, Matplotlib, Seaborn</li>
               <li>Scikit-learn, SciPy, StatsModels</li>
-              <li>Tensorflow, Keras, PyTorch, CNN, RNN, LSTM, Transformers</li>
-              <li>NLP (NLTK, SpaCy, TextBlob)</li>
-              <li>PyTorch, TensorFlow, scikit-learn</li>
+              <li>TensorFlow, Keras, PyTorch, CNN, RNN, LSTM, Transformers</li>
+              <li>NLP (NLTK, spaCy, TextBlob)</li>
               <li>Computer Vision (OpenCV)</li>
-              <li>NLP basics, neural network vissualization</li>
+              <li>NLP basics, neural network visualization</li>
             </ul>
           </div>
-          <div class="rounded-2xl p-6 bg-black/40 border border-white/10">
-            <h3 class="font-semibold text-purple-400">Dev & Tools</h3>
-            <ul class="mt-3 text-gray-300 list-disc list-inside">
-              <li>Git & GitHub, Streamlit, Flask</li>
-              <li>SQL, Model Deployment basics, html, css, js</li>
+          <div class="rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+            <h3 class="font-semibold text-cyan-300">Dev & Tools</h3>
+            <ul class="mt-3 text-slate-300 list-disc list-inside">
+              <li>Git and GitHub, Streamlit, Flask</li>
+              <li>SQL, model deployment basics, HTML, CSS, JavaScript</li>
               <li>Arduino, Sensors & Motor Control</li>
             </ul>
           </div>
-          <div class="rounded-2xl p-6 bg-black/40 border border-white/10">
-            <h3 class="font-semibold text-purple-400">Soft Skills</h3>
-            <ul class="mt-3 text-gray-300 list-disc list-inside">
+          <div class="rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+            <h3 class="font-semibold text-cyan-300">Soft Skills</h3>
+            <ul class="mt-3 text-slate-300 list-disc list-inside">
               <li>Creative Thinking</li>
               <li>Problem Solving</li>
               <li>Team Collaboration</li>
@@ -151,120 +241,221 @@
 
 
     <!-- Experience -->
-    <section id="Experience" class="py-16 px-6 bg-white/5" data-aos="fade-up">
+    <section id="experience" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-purple-300">Experience</h2>
-        <div class="mt-8 grid md:grid-cols-3 gap-6">
-          <div class="rounded-2xl p-6 bg-black/40 border border-white/10">
-            <h3 class="font-semibold text-purple-400">Prinston Smart Engineers-Onsite(Banglore)</h3>
-            <ul class="mt-3 text-gray-300 list-disc list-inside">
-              <li>ML-Intern</li>
-              <li>Build and Deployed a predictive MLmodel for titanic survival analysis, Handling data, Preprocessing, feature engineering and Evaluation</li>
-              <li>analysed datasets for age, gender, class and fare ccorrellations, improving model insights</li>
+        <h2 class="section-title text-3xl font-bold text-cyan-200">Internship Experience</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3 class="font-semibold text-cyan-300">AI Research Intern <span class="text-slate-400">(2026)</span></h3>
+            <p class="mt-1 text-sm text-slate-400">Overload Ware Labs - AI Division</p>
+            <ul class="mt-3 text-slate-300 list-disc list-inside">
+              <li>Prototyped deep learning and computer vision solutions using PyTorch and OpenCV for real-world tasks.</li>
+              <li>Improved baseline model accuracy by 12% through hyperparameter tuning and architecture experiments.</li>
+              <li>Produced weekly research documentation and technical walkthroughs for the engineering team.</li>
             </ul>
-          </div>
-          <div class="rounded-2xl p-6 bg-black/40 border border-white/10">
-            <h3 class="font-semibold text-purple-400">intraq Software Technologies-Remote</h3>
-            <ul class="mt-3 text-gray-300 list-disc list-inside">
-              <li>Full stack web development</li>
-              <li>developed a crud based website using react.js, node.js, HTML/css, and Javascript</li>
-              <li>Gained hands-on experience in full-stack deployment and version controll</li>
-           </ul>
-          </div>
-          <div class="rounded-2xl p-6 bg-black/40 border border-white/10">
-            <h3 class="font-semibold text-purple-400">Overload Ware Labs AI-Remote</h3>
-            <ul class="mt-3 text-gray-300 list-disc list-inside">
-              <li>AI/ML research Intern</li>
-              <li>Research made on  AI/ML Researcher Role</li>
-              <li>Research made on Large Language Models</li>
-              <li>Exploratory Data Analysis on Netflix Data set </li>
-           </ul>
-          </div>
+          </article>
+          <article class="timeline-item">
+            <h3 class="font-semibold text-cyan-300">Machine Learning Intern <span class="text-slate-400">(2025)</span></h3>
+            <p class="mt-1 text-sm text-slate-400">Prinston Smart Engineers</p>
+            <ul class="mt-3 text-slate-300 list-disc list-inside">
+              <li>Trained image classification and predictive ML models using Python and scikit-learn.</li>
+              <li>Built scalable data preprocessing pipelines, reducing training preparation time by 30%.</li>
+              <li>Deployed models through Flask REST APIs for real-time inference.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <h3 class="font-semibold text-cyan-300">Full-Stack Development Intern <span class="text-slate-400">(2025)</span></h3>
+            <p class="mt-1 text-sm text-slate-400">Intraq Software Technology</p>
+            <ul class="mt-3 text-slate-300 list-disc list-inside">
+              <li>Built FastAPI backends and data visualization dashboards integrating AI model outputs.</li>
+              <li>Optimized MongoDB queries and introduced caching, reducing API latency by 25%.</li>
+              <li>Delivered production-ready APIs and frontend integrations for internal tools.</li>
+            </ul>
+          </article>
+          <article class="timeline-item">
+            <h3 class="font-semibold text-cyan-300">Application Testing Intern (Hybrid) <span class="text-slate-400">(2026 - Present)</span></h3>
+            <p class="mt-1 text-sm text-slate-400">Kealogics Technologies Pvt. Ltd., Bengaluru</p>
+            <ul class="mt-3 text-slate-300 list-disc list-inside">
+              <li>Tested AI-powered application modules and logged 40+ issues using JIRA.</li>
+              <li>Wrote and maintained test case documentation, increasing QA coverage by 20%.</li>
+              <li>Collaborated with developers to verify fixes and reduce regression defects.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
 
 
     <!-- PROJECTS -->
     <section id="projects" class="py-16 px-6" data-aos="fade-up">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-purple-300">Featured Projects</h2>
+        <h2 class="section-title text-3xl font-bold text-cyan-200">Featured Projects</h2>
         <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Aura Derm -->
-          <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-            <div class="h-40 bg-cover bg-center" style="background-image:url('./assets/aura-derm.jpg')"></div>
+          <!-- Career GPS -->
+          <article class="rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+            <div class="h-40 bg-gradient-to-br from-cyan-900/60 via-[#121a23] to-lime-900/30 flex items-end p-4">
+              <p class="text-xs uppercase tracking-[0.16em] text-cyan-200">Dec 2025 - Jan 2026</p>
+            </div>
             <div class="p-5">
-              <h3 class="text-lg font-semibold text-white">Aura Derm — AI Skincare Advisor</h3>
-              <p class="mt-2 text-sm text-gray-300">Detects facial skin concerns and recommends products and diet.</p>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/Poojasri06/AuraDerm" target="_blank">GitHub</a>
+              <h3 class="text-lg font-semibold text-cyan-100">Career GPS</h3>
+              <p class="mt-2 text-sm text-slate-300">AI-driven career navigation platform that maps skills, interests, market demand, and future opportunities into an actionable career roadmap for students and early professionals.</p>
+              <div class="tag-wrap">
+                <span class="tech-tag">ML</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">Python</span>
               </div>
             </div>
           </article>
-          <!-- Humanoid Robot -->
-          <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-            <div class="h-40 bg-cover bg-center" style="background-image:url('./assets/robot.jpg')"></div>
+
+          <!-- Celeste Map -->
+          <article class="rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+            <div class="h-40 bg-gradient-to-br from-slate-900 via-[#121a23] to-cyan-900/40 flex items-end p-4">
+              <p class="text-xs uppercase tracking-[0.16em] text-cyan-200">Threat Intelligence Platform</p>
+            </div>
             <div class="p-5">
-              <h3 class="text-lg font-semibold text-white">Mini Humanoid Robot</h3>
-              <p class="mt-2 text-sm text-gray-300">Arduino robot with sensors and robotic arm.</p>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/Poojasri06" target="_blank">GitHub</a>
+              <h3 class="text-lg font-semibold text-cyan-100">Celeste Map</h3>
+              <p class="mt-2 text-sm text-slate-300">NLP-driven threat intelligence platform with entity extraction and risk scoring, built with Flask and PostgreSQL.</p>
+              <div class="tag-wrap">
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Streamlit</span>
               </div>
             </div>
           </article>
-          <!-- Deepfake -->
-          <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-            <div class="h-40 bg-cover bg-center" style="background-image:url('./assets/deepfake.png')"></div>
+
+          <!-- Crypto Analytics -->
+          <article class="rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+            <div class="h-40 bg-gradient-to-br from-lime-900/20 via-[#121a23] to-cyan-900/30 flex items-end p-4">
+              <p class="text-xs uppercase tracking-[0.16em] text-cyan-200">Real-Time Analytics</p>
+            </div>
             <div class="p-5">
-              <h3 class="text-lg font-semibold text-white">Deepfake Video Detection</h3>
-              <p class="mt-2 text-sm text-gray-300">Detects face-swap deepfakes with CNN/LSTM.</p>
+              <h3 class="text-lg font-semibold text-cyan-100">Real-Time Cryptocurrency Analytics App</h3>
+              <p class="mt-2 text-sm text-slate-300">Built a full-stack real-time cryptocurrency analytics web app for Indian users with live tracking for 10 coins, USD to INR conversion, sentiment analysis, and historical trend visualization.</p>
+              <ul class="mt-3 text-sm text-slate-300 list-disc list-inside">
+                <li>Live API-based price tracking and conversion pipeline.</li>
+                <li>NLP sentiment engine for positive, neutral, and negative mood classification.</li>
+                <li>Interactive trend charts correlating sentiment with market movement.</li>
+              </ul>
+              <div class="tag-wrap">
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Analytics</span>
+              </div>
+              <p class="mt-3 text-sm text-slate-400">Impact: Enables data-informed decisions by combining real-time pricing and sentiment signals without speculative prediction models.</p>
               <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/Poojasri06" target="_blank">GitHub</a>
+                <a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
           </article>
-          <!-- Titanic -->
-          <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-            <div class="h-40 bg-cover bg-center" style="background-image:url('./assets/titanic.jpg')"></div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-white">Titanic Survival Prediction</h3>
-              <p class="mt-2 text-sm text-gray-300">ML classification using passenger data.</p>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/Poojasri06" target="_blank">GitHub</a>
-              </div>
-            </div>
-          </article>
-          <!-- Hand Speak-->
-           <article class="rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-            <div class="h-40 bg-cover bg-center" style="background-image:url('./assets/hand_speak.png')"></div>
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-white">Hand Speak</h3>
-              <p class="mt-2 text-sm text-gray-300">ML Model that converts hand gestures into voice and text in the live camera</p>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-sm" href="https://github.com/Poojasri06" target="_blank">GitHub</a>
         </div>
       </div>
-      </article>
+    </section>
 
+    <!-- RESEARCH -->
+    <section id="research" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="section-title text-3xl font-bold text-cyan-200">Research</h2>
+        <article class="mt-8 rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+          <h3 class="text-xl font-semibold text-cyan-100">Deepfake Detection Using Deep Learning</h3>
+          <p class="mt-2 text-sm text-slate-400">Co-authored with Ragavi and Janani P.</p>
+          <ul class="mt-4 text-slate-300 list-disc list-inside">
+            <li>Achieved 94.2% accuracy on the FaceForensics++ benchmark using CNN and temporal consistency analysis.</li>
+            <li>Documented model architecture, dataset curation, and facial landmark tracking methodology.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="py-16 px-6" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="section-title text-3xl font-bold text-cyan-200">Achievements and Activities</h2>
+        <div class="mt-8 rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+          <ul class="text-slate-300 list-disc list-inside space-y-2">
+            <li>HackOverFlow Hackathon Participant - CultRang '26, built and pitched an NLP-powered AI solution in 24 hours.</li>
+            <li>Co-authored undergraduate research paper on deepfake detection with 94.2% benchmark accuracy.</li>
+            <li>Completed 4 internships across AI research, ML engineering, full-stack development, and QA.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="section-title text-3xl font-bold text-cyan-200">Education</h2>
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <article class="rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+            <h3 class="font-semibold text-cyan-100">B.Sc. Artificial Intelligence and Machine Learning</h3>
+            <p class="mt-1 text-sm text-slate-400">Vivekanandha College of Arts and Science for Women, Tiruchengode</p>
+            <p class="mt-2 text-slate-300">2023 - 2026 | CGPA: 7.0 / 10</p>
+          </article>
+          <article class="rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+            <h3 class="font-semibold text-cyan-100">Higher Secondary (HSC)</h3>
+            <p class="mt-1 text-sm text-slate-400">Sowdambikaa Matriculation Higher Secondary School, Thottiyam</p>
+            <p class="mt-2 text-slate-300">Score: 75%</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREELANCE -->
+    <section id="freelance" class="py-16 px-6" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="section-title text-3xl font-bold text-cyan-200">Freelance Organization</h2>
+        <div class="mt-8 rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+          <p class="text-slate-300">I work as a freelancer at my own organization, <span class="text-cyan-300 font-semibold">igniq.solutions</span>, where I build AI-driven and web-based solutions.</p>
+          <a class="mt-4 inline-flex px-4 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400" href="https://poojasri06.github.io/igniq.solutions/igniq_portfolio.html" target="_blank" rel="noopener">View igniq.solutions Portfolio</a>
+        </div>
+      </div>
     </section>
 
     <!-- RESUME -->
-    <section id="resume" class="py-16 px-6 bg-white/5" data-aos="fade-up">
+    <section id="resume" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
       <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-purple-300">Resume</h2>
-        <p class="mt-3 text-gray-300">Download my resume as PDF</p>
-        <a href="./assets/PoojaSri_Resume.pdf" download class="mt-5 inline-flex px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-700">Download Resume</a>
+        <h2 class="section-title text-3xl font-bold text-cyan-200">Resume</h2>
+        <p class="mt-3 text-slate-300">Download my resume as PDF</p>
+        <a href="./assets/PoojaSri_Resume.pdf" download class="mt-5 inline-flex px-6 py-3 rounded-xl bg-lime-400 text-[#111a11] hover:bg-lime-300">Download Resume</a>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="py-16 px-6" data-aos="fade-up">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-purple-300">Contact Me</h2>
-        <p class="mt-2 text-gray-400">Email: <a class="text-purple-400 underline" href="mailto:poojasrikumar006@gmail.com">poojasrikumar006@gmail.com</a></p>
+        <h2 class="section-title text-3xl font-bold text-cyan-200">Contact Me</h2>
+        <p class="mt-2 text-slate-400">Let's connect for internships, collaborations, and AI project discussions.</p>
+
+        <div class="mt-8 grid sm:grid-cols-3 gap-4 text-left">
+          <article class="rounded-xl border border-cyan-400/25 bg-black/30 p-4">
+            <p class="text-xs uppercase tracking-[0.14em] text-slate-400">Email</p>
+            <a class="mt-2 block text-cyan-300 underline break-all" href="mailto:poojasrikumar006@gmail.com">poojasrikumar006@gmail.com</a>
+          </article>
+
+          <article class="rounded-xl border border-cyan-400/25 bg-black/30 p-4">
+            <p class="text-xs uppercase tracking-[0.14em] text-slate-400">LinkedIn</p>
+            <a class="mt-2 block text-cyan-300 underline break-all" href="https://www.linkedin.com/in/poojasrikumar06" target="_blank" rel="noopener">linkedin.com/in/poojasrikumar06</a>
+          </article>
+
+          <article class="rounded-xl border border-cyan-400/25 bg-black/30 p-4">
+            <p class="text-xs uppercase tracking-[0.14em] text-slate-400">GitHub</p>
+            <a class="mt-2 block text-cyan-300 underline break-all" href="https://github.com/Poojasri06" target="_blank" rel="noopener">github.com/Poojasri06</a>
+          </article>
+        </div>
+
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
+          <a class="px-4 py-2 rounded-lg border border-cyan-400/40 text-slate-200 hover:border-cyan-300 hover:text-cyan-200" href="mailto:poojasrikumar006@gmail.com">Email Me</a>
+          <a class="px-4 py-2 rounded-lg border border-cyan-400/40 text-slate-200 hover:border-cyan-300 hover:text-cyan-200" href="https://github.com/Poojasri06" target="_blank" rel="noopener">GitHub</a>
+          <a class="px-4 py-2 rounded-lg border border-cyan-400/40 text-slate-200 hover:border-cyan-300 hover:text-cyan-200" href="https://www.linkedin.com/in/poojasrikumar06" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-white/10 text-center py-6 text-gray-400 text-sm">
+  <footer class="border-t border-white/10 text-center py-6 text-slate-400 text-sm">
     © <span id="year"></span> Pooja Sri — AI Portfolio
   </footer>
 
@@ -274,8 +465,8 @@
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
-      particles:{ number:{value:40}, color:{value:"#a855f7"}, shape:{type:"circle"},
-      opacity:{value:.35}, size:{value:2}, line_linked:{enable:true, distance:120, color:"#a855f7", opacity:.2, width:1}, move:{enable:true, speed:1} },
+      particles:{ number:{value:40}, color:{value:"#00D1FF"}, shape:{type:"circle"},
+      opacity:{value:.35}, size:{value:2}, line_linked:{enable:true, distance:120, color:"#00D1FF", opacity:.2, width:1}, move:{enable:true, speed:1} },
       interactivity:{ events:{ onhover:{enable:true, mode:"grab"} }, modes:{ grab:{distance:140,line_linked:{opacity:.3}} } }, retina_detect:true
     });
     // Loader hide
