@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pooja Sri - Live Resume</title>
+  <meta name="description" content="Live resume of Pooja Sri - AI and ML Engineer. Experience, skills, projects, and education." />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-light: #121a23;
+      --text-main: #eaf2ff;
+      --text-muted: #8ca0b8;
+      --brand: #00d1ff;
+      --accent: #a3ff12;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Arial;
+      background: linear-gradient(160deg, var(--bg), var(--bg-light));
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(0, 209, 255, 0.2);
+      padding-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--brand);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .tagline {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+    .contact-links a {
+      color: var(--brand);
+      text-decoration: none;
+      border: 1px solid rgba(0, 209, 255, 0.3);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    .contact-links a:hover {
+      border-color: var(--brand);
+      background: rgba(0, 209, 255, 0.1);
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+    .experience-item {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-left: 3px solid var(--brand);
+      border-radius: 4px;
+    }
+    .job-title {
+      font-weight: 700;
+      color: var(--brand);
+      font-size: 1rem;
+    }
+    .company-date {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin: 0.3rem 0;
+    }
+    .job-desc {
+      margin-top: 0.5rem;
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+    .job-desc ul {
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    .job-desc li {
+      margin-bottom: 0.3rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-category {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 209, 255, 0.2);
+    }
+    .skill-category h3 {
+      color: var(--brand);
+      font-size: 0.95rem;
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+    }
+    .skill-category p {
+      color: var(--text-main);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .education-item {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      border-left: 3px solid var(--accent);
+    }
+    .degree {
+      font-weight: 700;
+      color: var(--brand);
+    }
+    .school {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .year {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 0.3rem;
+    }
+    footer {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0, 209, 255, 0.2);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .contact-links { flex-direction: column; }
+      .contact-links a { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <h1>Pooja Sri</h1>
+      <p class="tagline">AI & ML Engineer • Full-Stack Developer • LLM & Computer Vision Enthusiast</p>
+      <div class="contact-links">
+        <a href="mailto:poojasrikumar006@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/poojasrikumar06" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Poojasri06" target="_blank">GitHub</a>
+        <a href="https://poojasri06.github.io/My-portfolio/" target="_blank">Portfolio</a>
+      </div>
+    </header>
+
+    <!-- EXPERIENCE -->
+    <section>
+      <h2>Work Experience</h2>
+      
+      <div class="experience-item">
+        <div class="job-title">AI Research Intern</div>
+        <div class="company-date">Overload Ware Labs - AI Division · 2026</div>
+        <div class="job-desc">
+          <ul>
+            <li>Prototyped deep learning and computer vision solutions using PyTorch and OpenCV for real-world tasks.</li>
+            <li>Improved baseline model accuracy by 12% through hyperparameter tuning and architecture experiments.</li>
+            <li>Produced weekly research documentation and technical walkthroughs for the engineering team.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-title">Machine Learning Intern</div>
+        <div class="company-date">Prinston Smart Engineers · 2025</div>
+        <div class="job-desc">
+          <ul>
+            <li>Trained image classification and predictive ML models using Python and scikit-learn.</li>
+            <li>Built scalable data preprocessing pipelines, reducing training preparation time by 30%.</li>
+            <li>Deployed models through Flask REST APIs for real-time inference.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-title">Full-Stack Development Intern</div>
+        <div class="company-date">Intraq Software Technology · 2025</div>
+        <div class="job-desc">
+          <ul>
+            <li>Built FastAPI backends and data visualization dashboards integrating AI model outputs.</li>
+            <li>Optimized MongoDB queries and introduced caching, reducing API latency by 25%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-title">Application Testing Intern</div>
+        <div class="company-date">Kealogics Technologies Pvt. Ltd., Bengaluru · 2026</div>
+        <div class="job-desc">
+          <ul>
+            <li>Tested AI-powered application modules and logged 40+ issues using JIRA.</li>
+            <li>Wrote and maintained test case documentation, increasing QA coverage by 20%.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section>
+      <h2>Featured Projects</h2>
+      
+      <div class="experience-item">
+        <div class="job-title">Career GPS</div>
+        <div class="company-date">Dec 2025 - Jan 2026</div>
+        <div class="job-desc">
+          AI-driven career navigation platform mapping skills, interests, market demand, and opportunities into actionable roadmaps for students and early professionals.
+          <strong style="color: var(--accent);">Tech:</strong> ML, NLP, Python
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-title">Real-Time Cryptocurrency Analytics App</div>
+        <div class="company-date">Full-Stack Development</div>
+        <div class="job-desc">
+          Full-stack crypto analytics platform with live price tracking, USD to INR conversion, and NLP-based sentiment analysis for 10 cryptocurrencies.
+          <strong style="color: var(--accent);">Tech:</strong> Python, NLP, JavaScript, Analytics
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-title">Deepfake Detection Using Deep Learning</div>
+        <div class="company-date">Research (Co-authored with Ragavi & Janani P.)</div>
+        <div class="job-desc">
+          Achieved 94.2% accuracy on FaceForensics++ benchmark using CNN and temporal consistency analysis.
+          <strong style="color: var(--accent);">Impact:</strong> Published research methodology on deepfake video detection.
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>AI & ML</h3>
+          <p>Python, PyTorch, TensorFlow, Keras, Scikit-learn, NLP (NLTK, spaCy, TextBlob), Computer Vision (OpenCV), CNN, RNN, LSTM, Transformers</p>
+        </div>
+        <div class="skill-category">
+          <h3>Development</h3>
+          <p>HTML, CSS, JavaScript, Python, FastAPI, Flask, React.js, Node.js, MongoDB, PostgreSQL, SQL</p>
+        </div>
+        <div class="skill-category">
+          <h3>Tools & DevOps</h3>
+          <p>Git & GitHub, Streamlit, Docker, JIRA, ML model deployment, Arduino, Sensors & Motor Control</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2>Education</h2>
+      
+      <div class="education-item">
+        <div class="degree">B.Sc. Artificial Intelligence and Machine Learning</div>
+        <div class="school">Vivekanandha College of Arts and Science for Women, Tiruchengode</div>
+        <div class="year">2023 - 2026 | CGPA: 7.0 / 10</div>
+      </div>
+
+      <div class="education-item">
+        <div class="degree">Higher Secondary (HSC)</div>
+        <div class="school">Sowdambikaa Matriculation Higher Secondary School, Thottiyam</div>
+        <div class="year">Score: 75%</div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section>
+      <h2>Achievements & Activities</h2>
+      <div class="experience-item">
+        <div class="job-desc">
+          <ul>
+            <li><strong>HackOverFlow Hackathon Participant</strong> - CultRang '26, built and pitched an NLP-powered AI solution in 24 hours.</li>
+            <li><strong>Research Publication</strong> - Co-authored undergraduate research paper on deepfake detection with 94.2% benchmark accuracy.</li>
+            <li><strong>4 Internships Completed</strong> - AI research, ML engineering, full-stack development, and QA across leading tech companies.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Live Resume • Last Updated March 2026 • <a href="https://github.com/Poojasri06" target="_blank" style="color: var(--brand); text-decoration: none;">View on GitHub</a></p>
+    </footer>
+  </div>
+</body>
+</html>
