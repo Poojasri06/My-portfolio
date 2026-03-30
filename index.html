@@ -259,6 +259,101 @@
       background: rgba(163, 255, 18, 0.2);
     }
 
+    .ai-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .ai-pill {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(0, 209, 255, 0.35);
+      border-radius: 9999px;
+      padding: 0.32rem 0.62rem;
+      color: #bdefff;
+      background: rgba(0, 209, 255, 0.1);
+    }
+    .data-flow {
+      position: fixed;
+      inset: 0;
+      z-index: -4;
+      pointer-events: none;
+      opacity: 0.2;
+      background: repeating-linear-gradient(
+        120deg,
+        rgba(0, 209, 255, 0.1) 0,
+        rgba(0, 209, 255, 0.1) 1px,
+        transparent 1px,
+        transparent 42px
+      );
+      animation: flowShift 18s linear infinite;
+    }
+    @keyframes flowShift {
+      from { transform: translateX(0); }
+      to { transform: translateX(80px); }
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(140deg, rgba(0, 209, 255, 0.12), transparent 50%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+    .project-card:hover::before { opacity: 1; }
+    .metric-line {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: #cde8ff;
+      border-left: 2px solid rgba(163, 255, 18, 0.6);
+      padding-left: 0.55rem;
+    }
+    .demo-note {
+      margin-top: 0.7rem;
+      font-size: 0.72rem;
+      color: #8fb2d5;
+    }
+    .btn-muted {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(140, 160, 184, 0.35);
+      color: #a3b7cf;
+      font-size: 0.82rem;
+      background: rgba(15, 23, 32, 0.6);
+      cursor: not-allowed;
+    }
+
+    .cert-grid {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .cert-card {
+      border: 1px solid rgba(0, 209, 255, 0.25);
+      border-radius: 1rem;
+      background: rgba(0, 0, 0, 0.28);
+      padding: 1rem;
+    }
+    .cert-badge {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #d8ff9f;
+    }
+
     /* Reimagined skills section */
     .skills-shell {
       margin-top: 1.5rem;
@@ -411,6 +506,7 @@
     <span class="aurora-blob b2"></span>
     <span class="aurora-blob b3"></span>
   </div>
+  <div class="data-flow" aria-hidden="true"></div>
   <div id="tech-grid"></div>
   <div id="particles-js" aria-hidden="true"></div>
 
@@ -434,6 +530,7 @@
           <li><a class="hover:text-cyan-300" href="#projects">Projects</a></li>
           <li><a class="hover:text-cyan-300" href="#research">Research</a></li>
           <li><a class="hover:text-cyan-300" href="#achievements">Achievements</a></li>
+          <li><a class="hover:text-cyan-300" href="#certifications">Certifications</a></li>
           <li><a class="hover:text-cyan-300" href="#education">Education</a></li>
           <li><a class="hover:text-cyan-300" href="#freelance">Freelance</a></li>
           <li><a class="hover:text-cyan-300" href="#resume">Resume</a></li>
@@ -450,6 +547,13 @@
         <p class="text-sm uppercase tracking-[.2em] text-slate-400">Aspiring AI Engineer</p>
         <h1 class="mt-3 text-5xl sm:text-6xl font-bold text-cyan-200">Building Practical AI for Real People</h1>
         <p class="mt-4 text-slate-300">I build machine learning and deep learning projects, computer vision applications, and robotics prototypes. I enjoy turning ideas into practical, user-friendly solutions.</p>
+        <div class="ai-pill-row">
+          <span class="ai-pill">GenAI</span>
+          <span class="ai-pill">LLM Apps</span>
+          <span class="ai-pill">Computer Vision</span>
+          <span class="ai-pill">NLP Systems</span>
+          <span class="ai-pill">AI Product Engineering</span>
+        </div>
         <div class="hero-stat-grid text-left">
           <article class="hero-stat">
             <strong>8+ Projects</strong>
@@ -622,10 +726,11 @@
         </div>
         <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Career GPS -->
-          <article class="rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
             <div class="p-5">
               <h3 class="text-lg font-semibold text-cyan-100">Career GPS</h3>
               <p class="mt-2 text-sm text-slate-300">AI-driven career navigation platform that maps skills, interests, market demand, and future opportunities into an actionable career roadmap for students and early professionals.</p>
+              <p class="metric-line">Built end-to-end recommendation and role-matching flow with personalized learning path generation for early-career users.</p>
               <div class="tag-wrap">
                 <span class="tech-tag">ML</span>
                 <span class="tech-tag">NLP</span>
@@ -633,15 +738,17 @@
               </div>
               <div class="mt-4 flex gap-3">
                 <a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/career-gps" target="_blank" rel="noopener">GitHub</a>
+                <span class="btn-muted" aria-disabled="true">Live Demo (Deploying)</span>
               </div>
             </div>
           </article>
 
           <!-- Celeste Map -->
-          <article class="rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
             <div class="p-5">
               <h3 class="text-lg font-semibold text-cyan-100">Celeste Map</h3>
               <p class="mt-2 text-sm text-slate-300">NLP-driven threat intelligence platform with entity extraction and risk scoring, built with Flask and PostgreSQL.</p>
+              <p class="metric-line">Designed to surface high-risk alerts faster by combining keyword intelligence, context extraction, and weighted risk scoring.</p>
               <div class="tag-wrap">
                 <span class="tech-tag">NLP</span>
                 <span class="tech-tag">Flask</span>
@@ -650,12 +757,13 @@
               </div>
               <div class="mt-4 flex gap-3">
                 <a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/Celeste-map" target="_blank" rel="noopener">GitHub</a>
+                <span class="btn-muted" aria-disabled="true">Live Demo (Deploying)</span>
               </div>
             </div>
           </article>
 
           <!-- Crypto Analytics -->
-          <article class="rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
             <div class="p-5">
               <h3 class="text-lg font-semibold text-cyan-100">Real-Time Cryptocurrency Analytics App</h3>
               <p class="mt-2 text-sm text-slate-300">Full-stack crypto analytics platform with live price tracking, USD to INR conversion, and NLP-based sentiment analysis for 10 cryptocurrencies.</p>
@@ -672,10 +780,12 @@
           </article>
 
           <!-- Aura Derm -->
-          <article class="rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
             <div class="p-5">
               <h3 class="text-lg font-semibold text-cyan-100">Aura Derm - AI Skincare Advisor</h3>
               <p class="mt-2 text-sm text-slate-300">Detects facial skin concerns and recommends products and diet suggestions.</p>
+              <p class="metric-line">Trained on a curated dermatology image set and reached 89% validation accuracy for multi-class skin concern detection.</p>
+              <p class="demo-note">Includes condition-wise confidence scoring to improve decision transparency.</p>
               <div class="tag-wrap">
                 <span class="tech-tag">CV</span>
                 <span class="tech-tag">DL</span>
@@ -687,10 +797,12 @@
           </article>
 
           <!-- Mini Humanoid Robot -->
-          <article class="rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
             <div class="p-5">
               <h3 class="text-lg font-semibold text-cyan-100">Mini Humanoid Robot</h3>
               <p class="mt-2 text-sm text-slate-300">Arduino-based robot with sensors and robotic arm integration.</p>
+              <p class="metric-line">Implemented sensor-driven obstacle response and gesture-like arm routines for interactive movement sequences.</p>
+              <p class="demo-note">Built control logic to combine distance sensing, motor commands, and stability checks in real time.</p>
               <div class="tag-wrap">
                 <span class="tech-tag">Robotics</span>
                 <span class="tech-tag">CV</span>
@@ -702,10 +814,12 @@
           </article>
 
           <!-- Deepfake Video Detection -->
-          <article class="rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
             <div class="p-5">
               <h3 class="text-lg font-semibold text-cyan-100">Deepfake Video Detection</h3>
               <p class="mt-2 text-sm text-slate-300">Detects face-swap deepfakes using CNN and temporal analysis methods.</p>
+              <p class="metric-line">Achieved 94.2% benchmark accuracy on FaceForensics++ using frame-level CNN features with temporal consistency checks.</p>
+              <p class="demo-note">Focused on reducing false positives in low-light and compression-heavy video samples.</p>
               <div class="tag-wrap">
                 <span class="tech-tag">CV</span>
                 <span class="tech-tag">DL</span>
@@ -717,7 +831,7 @@
           </article>
 
           <!-- Titanic Survival Prediction -->
-          <article class="rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
             <div class="p-5">
               <h3 class="text-lg font-semibold text-cyan-100">Titanic Survival Prediction</h3>
               <p class="mt-2 text-sm text-slate-300">Machine learning classification model using passenger data features.</p>
@@ -732,10 +846,12 @@
           </article>
 
           <!-- Hand Speak -->
-          <article class="rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
             <div class="p-5">
               <h3 class="text-lg font-semibold text-cyan-100">Hand Speak</h3>
               <p class="mt-2 text-sm text-slate-300">Converts hand gestures into real-time text and voice output from live camera input.</p>
+              <p class="metric-line">Reached 92% gesture-to-text accuracy in internal testing with near real-time inference around 200-250ms per frame.</p>
+              <p class="demo-note">Optimized preprocessing and frame sampling for smoother camera-to-output experience.</p>
               <div class="tag-wrap">
                 <span class="tech-tag">CV</span>
                 <span class="tech-tag">NLP</span>
@@ -756,10 +872,11 @@
         <h2 class="section-title text-3xl font-bold text-cyan-200">Research</h2>
         <article class="mt-8 rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
           <h3 class="text-xl font-semibold text-cyan-100">Deepfake Detection Using Deep Learning</h3>
-          <p class="mt-2 text-sm text-slate-400">Co-authored with Ragavi and Janani P.</p>
+          <p class="mt-2 text-sm text-slate-400">Co-authored with Ragavi and Janani P. | Undergraduate manuscript (Under Review)</p>
           <ul class="mt-4 text-slate-300 list-disc list-inside">
-            <li>Achieved 94.2% accuracy on the FaceForensics++ benchmark using CNN and temporal consistency analysis.</li>
-            <li>Documented model architecture, dataset curation, and facial landmark tracking methodology.</li>
+            <li><span class="text-lime-300 font-semibold">94.2% benchmark accuracy</span> on FaceForensics++ using CNN and temporal consistency analysis.</li>
+            <li>Documented model architecture, dataset curation, and facial landmark tracking methodology with reproducible experiment setup.</li>
+            <li>Research/code reference: <a class="text-cyan-300 underline" href="https://github.com/Poojasri06/Deepfake-video-detection" target="_blank" rel="noopener">Project repository and materials</a>.</li>
           </ul>
         </article>
       </div>
@@ -774,7 +891,29 @@
             <li>HackOverFlow Hackathon Participant - CultRang '26, built and pitched an NLP-powered AI solution in 24 hours.</li>
             <li>Co-authored undergraduate research paper on deepfake detection with 94.2% benchmark accuracy.</li>
             <li>Completed 4 internships across AI research, ML engineering, full-stack development, and QA.</li>
+            <li>Completed Google Gen AI Academy APAC Edition with practical labs on MCP, ADK, Vertex AI, and A2A systems on Google Cloud.</li>
+            <li>Built Career GPS as an end-to-end GenAI-guided career planning platform from idea to working prototype.</li>
+            <li>Received positive feedback during internships for ownership, technical documentation quality, and reliable delivery.</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="section-title text-3xl font-bold text-cyan-200">Certifications</h2>
+        <div class="cert-grid">
+          <article class="cert-card">
+            <p class="cert-badge">Google Cloud</p>
+            <h3 class="mt-2 text-lg font-semibold text-cyan-100">Google Gen AI Academy - APAC Edition</h3>
+            <p class="mt-2 text-sm text-slate-300">Completed hands-on labs and guided modules focused on practical GenAI engineering workflows.</p>
+            <ul class="mt-3 text-sm text-slate-300 list-disc list-inside space-y-1">
+              <li>MCP workflows and agent integration patterns</li>
+              <li>ADK-based prototyping and orchestration</li>
+              <li>Vertex AI and A2A lab workflows on Google Cloud</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -801,9 +940,14 @@
     <!-- FREELANCE -->
     <section id="freelance" class="py-16 px-6" data-aos="fade-up">
       <div class="max-w-6xl mx-auto">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Freelance Organization</h2>
+        <h2 class="section-title text-3xl font-bold text-cyan-200">Freelance and Founder Work</h2>
         <div class="mt-8 rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
-          <p class="text-slate-300">I work as a freelancer at my own organization, <span class="text-cyan-300 font-semibold">igniq.solutions</span>, where I build AI-driven and web-based solutions.</p>
+          <p class="text-slate-300">I am the founder of <span class="text-cyan-300 font-semibold">IGNIQ Solutions</span>, where I build AI-driven and web-based solutions for early-stage teams and student founders.</p>
+          <ul class="mt-4 text-slate-300 list-disc list-inside space-y-2">
+            <li>Developed AI-assisted web products combining NLP/CV modules with lightweight dashboards.</li>
+            <li>Delivered rapid MVP builds with clear handoff documentation and deployment-ready structure.</li>
+            <li>Improved turnaround and quality through reusable components, reducing typical prototype iteration cycles.</li>
+          </ul>
           <a class="mt-4 inline-flex px-4 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400" href="https://poojasri06.github.io/igniq.solutions/igniq_portfolio.html" target="_blank" rel="noopener">View igniq.solutions Portfolio</a>
         </div>
       </div>
