@@ -1,1119 +1,1039 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Poojasri Kumar | AI, ML and Data Portfolio</title>
-  <meta name="description" content="Portfolio of Poojasri Kumar, aspiring AI Engineer. Projects, research, internships, and freelance work in AI, ML, NLP, and full-stack development." />
-  <meta name="theme-color" content="#0B0F14" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <style>
-    :root {
-      --bg-0: #0b0f14;
-      --bg-1: #121a23;
-      --text-main: #eaf2ff;
-      --text-muted: #8ca0b8;
-      --brand: #00d1ff;
-      --accent: #a3ff12;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color: var(--text-main);
-      background:
-        radial-gradient(circle at 10% 10%, rgba(0, 209, 255, 0.16), transparent 40%),
-        radial-gradient(circle at 85% 20%, rgba(163, 255, 18, 0.08), transparent 40%),
-        linear-gradient(160deg, var(--bg-0), var(--bg-1));
-      overflow-x: hidden;
-    }
-    h1, h2, h3, .brand-title { font-family: "Space Grotesk", "IBM Plex Sans", sans-serif; letter-spacing: 0.01em; }
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Poojasri Kumar | AI, ML and Data Portfolio</title>
+<meta name="description" content="Portfolio of Poojasri Kumar, aspiring AI Engineer. Projects, research, internships, and freelance work in AI, ML, NLP, and full-stack development." />
+<meta name="theme-color" content="#0B0F14" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<style>
+:root {
+--bg-0: #0b0f14;
+--bg-1: #121a23;
+--text-main: #eaf2ff;
+--text-muted: #8ca0b8;
+--brand: #00d1ff;
+--accent: #a3ff12;
+}
+html { scroll-behavior: smooth; }
+body {
+font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+color: var(--text-main);
+background:
+radial-gradient(circle at 10% 10%, rgba(0, 209, 255, 0.16), transparent 40%),
+radial-gradient(circle at 85% 20%, rgba(163, 255, 18, 0.08), transparent 40%),
+linear-gradient(160deg, var(--bg-0), var(--bg-1));
+overflow-x: hidden;
+}
+h1, h2, h3, .brand-title { font-family: "Space Grotesk", "IBM Plex Sans", sans-serif; letter-spacing: 0.01em; }
 
-    /* Loader */
-    #loader { position: fixed; inset: 0; display: grid; place-items: center; background:#000; color:#fff; z-index: 50; }
-    .dot { width: 10px; height: 10px; margin: 6px; border-radius: 9999px; background: var(--brand); animation: bounce 0.6s infinite alternate; }
-    .dot:nth-child(2){ animation-delay: .2s; } .dot:nth-child(3){ animation-delay:.4s; }
-    @keyframes bounce { 0%{transform:translateY(0)} 100%{transform:translateY(-12px)} }
+/* Loader */
+#loader { position: fixed; inset: 0; display: grid; place-items: center; background:#000; color:#fff; z-index: 50; }
+.dot { width: 10px; height: 10px; margin: 6px; border-radius: 9999px; background: var(--brand); animation: bounce 0.6s infinite alternate; }
+.dot:nth-child(2){ animation-delay: .2s; } .dot:nth-child(3){ animation-delay:.4s; }
+@keyframes bounce { 0%{transform:translateY(0)} 100%{transform:translateY(-12px)} }
 
-    /* Background Particles */
-    #particles-js, #tech-grid { position: fixed; inset: 0; z-index: -2; }
-    #aurora-field {
-      position: fixed;
-      inset: 0;
-      z-index: -3;
-      overflow: hidden;
-      pointer-events: none;
-    }
-    .aurora-blob {
-      position: absolute;
-      filter: blur(28px);
-      border-radius: 9999px;
-      opacity: 0.36;
-      mix-blend-mode: screen;
-      animation: drift 16s ease-in-out infinite alternate;
-    }
-    .aurora-blob.b1 {
-      width: 24rem;
-      height: 24rem;
-      left: -6rem;
-      top: 8rem;
-      background: radial-gradient(circle, rgba(0, 209, 255, 0.75), rgba(0, 209, 255, 0));
-    }
-    .aurora-blob.b2 {
-      width: 20rem;
-      height: 20rem;
-      right: -4rem;
-      top: 22%;
-      background: radial-gradient(circle, rgba(163, 255, 18, 0.55), rgba(163, 255, 18, 0));
-      animation-duration: 18s;
-    }
-    .aurora-blob.b3 {
-      width: 22rem;
-      height: 22rem;
-      left: 35%;
-      bottom: -9rem;
-      background: radial-gradient(circle, rgba(0, 209, 255, 0.45), rgba(0, 209, 255, 0));
-      animation-duration: 22s;
-    }
-    #tech-grid {
-      background-image: linear-gradient(rgba(140,160,184,0.14) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(140,160,184,0.14) 1px, transparent 1px);
-      background-size: 64px 64px;
-      opacity: 0.35;
-    }
-    @keyframes drift {
-      0% { transform: translate3d(0, 0, 0) scale(1); }
-      50% { transform: translate3d(30px, -16px, 0) scale(1.08); }
-      100% { transform: translate3d(-28px, 20px, 0) scale(0.96); }
-    }
+/* Background Particles */
+#particles-js, #tech-grid { position: fixed; inset: 0; z-index: -2; }
+#aurora-field {
+position: fixed;
+inset: 0;
+z-index: -3;
+overflow: hidden;
+pointer-events: none;
+}
+.aurora-blob {
+position: absolute;
+filter: blur(28px);
+border-radius: 9999px;
+opacity: 0.36;
+mix-blend-mode: screen;
+animation: drift 16s ease-in-out infinite alternate;
+}
+.aurora-blob.b1 {
+width: 24rem;
+height: 24rem;
+left: -6rem;
+top: 8rem;
+background: radial-gradient(circle, rgba(0, 209, 255, 0.75), rgba(0, 209, 255, 0));
+}
+.aurora-blob.b2 {
+width: 20rem;
+height: 20rem;
+right: -4rem;
+top: 22%;
+background: radial-gradient(circle, rgba(163, 255, 18, 0.55), rgba(163, 255, 18, 0));
+animation-duration: 18s;
+}
+.aurora-blob.b3 {
+width: 22rem;
+height: 22rem;
+left: 35%;
+bottom: -9rem;
+background: radial-gradient(circle, rgba(0, 209, 255, 0.45), rgba(0, 209, 255, 0));
+animation-duration: 22s;
+}
+#tech-grid {
+background-image: linear-gradient(rgba(140,160,184,0.14) 1px, transparent 1px),
+linear-gradient(90deg, rgba(140,160,184,0.14) 1px, transparent 1px);
+background-size: 64px 64px;
+opacity: 0.35;
+}
+@keyframes drift {
+0% { transform: translate3d(0, 0, 0) scale(1); }
+50% { transform: translate3d(30px, -16px, 0) scale(1.08); }
+100% { transform: translate3d(-28px, 20px, 0) scale(0.96); }
+}
 
-    /* Sparkle cursor */
-    .sparkle {
-      position: fixed;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      pointer-events: none;
-      animation: sparkleAnim 0.8s linear forwards;
-      z-index: 9999;
-    }
-    @keyframes sparkleAnim {
-      0% { transform: scale(1); opacity:1; }
-      100% { transform: scale(0.5); opacity:0; }
-    }
+/* Sparkle cursor */
+.sparkle {
+position: fixed;
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background: var(--accent);
+pointer-events: none;
+animation: sparkleAnim 0.8s linear forwards;
+z-index: 9999;
+}
+@keyframes sparkleAnim {
+0% { transform: scale(1); opacity:1; }
+100% { transform: scale(0.5); opacity:0; }
+}
 
-    /* Accessibility skip link */
-    .skip-link { position:absolute; left:-999px; }
-    .skip-link:focus { position: fixed; left: 1rem; top: 1rem; background:#111827; color:#fff; padding:0.5rem; border-radius:0.5rem; z-index:60; }
+/* Accessibility skip link */
+.skip-link { position:absolute; left:-999px; }
+.skip-link:focus { position: fixed; left: 1rem; top: 1rem; background:#111827; color:#fff; padding:0.5rem; border-radius:0.5rem; z-index:60; }
 
-    /* Section header animation */
-    .section-title {
-      display: inline-block;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-    .section-title::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 60%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--brand), var(--accent));
-      transform-origin: left;
-      animation: drawLine 1s ease-out forwards;
-    }
-    @keyframes drawLine {
-      0% { transform: scaleX(0); opacity: 0.35; }
-      100% { transform: scaleX(1); opacity: 1; }
-    }
+/* Section header animation */
+.section-title {
+display: inline-block;
+position: relative;
+padding-bottom: 0.5rem;
+}
+.section-title::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+width: 60%;
+height: 2px;
+background: linear-gradient(90deg, var(--brand), var(--accent));
+transform-origin: left;
+animation: drawLine 1s ease-out forwards;
+}
+@keyframes drawLine {
+0% { transform: scaleX(0); opacity: 0.35; }
+100% { transform: scaleX(1); opacity: 1; }
+}
 
-    /* Timeline layout */
-    .timeline {
-      position: relative;
-      margin-top: 2rem;
-      padding-left: 2.5rem;
-      display: grid;
-      gap: 1.2rem;
-    }
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 0.85rem;
-      top: 0;
-      bottom: 0;
-      width: 2p background: linear-gradient(180deg, rgba(0, 209, 255, 0.8), rgba(163, 255, 18, 0.6));
-    }
-    .timeline-item {
-      position: relative;
-      border: 1px solid rgba(0, 209, 255, 0.2);
-      background: rgba(0, 0, 0, 0.32);
-      border-radius: 1rem;
-      padding: 1.25rem;
-    }
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      border-radius: 9999px;
-      background: var(--accent);
-      left: -2.05rem;
-      top: 1.45rem;
-      box-shadow: 0 0 0 4px rgba(163, 255, 18, 0.15);
-    }
+/* Timeline layout */
+.timeline {
+position: relative;
+margin-top: 2rem;
+padding-left: 2.5rem;
+display: grid;
+gap: 1.2rem;
+}
+.timeline::before {
+content: "";
+position: absolute;
+left: 0.85rem;
+top: 0;
+bottom: 0;
+width: 2p background: linear-gradient(180deg, rgba(0, 209, 255, 0.8), rgba(163, 255, 18, 0.6));
+}
+.timeline-item {
+position: relative;
+border: 1px solid rgba(0, 209, 255, 0.2);
+background: rgba(0, 0, 0, 0.32);
+border-radius: 1rem;
+padding: 1.25rem;
+}
+.timeline-item::before {
+content: "";
+position: absolute;
+width: 12px;
+height: 12px;
+border-radius: 9999px;
+background: var(--accent);
+left: -2.05rem;
+top: 1.45rem;
+box-shadow: 0 0 0 4px rgba(163, 255, 18, 0.15);
+}
 
-    /* Project tech tags */
-    .tag-wrap { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.85rem; }
-    .tech-tag {
-      font-size: 0.72rem;
-      letter-spacing: 0.02em;
-      padding: 0.25rem 0.55rem;
-      border-radius: 9999px;
-      border: 1px solid rgba(0, 209, 255, 0.35);
-      color: #c5f5ff;
-      background: rgba(0, 209, 255, 0.08);
-    }
+/* Project tech tags */
+.tag-wrap { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.85rem; }
+.tech-tag {
+font-size: 0.72rem;
+letter-spacing: 0.02em;
+padding: 0.25rem 0.55rem;
+border-radius: 9999px;
+border: 1px solid rgba(0, 209, 255, 0.35);
+color: #c5f5ff;
+background: rgba(0, 209, 255, 0.08);
+}
 
-    /* Darpan-inspired utility patterns */
-    .quick-links-rail {
-      position: fixed;
-      right: 1.25rem;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 35;
-      display: none;
-      gap: 0.55rem;
-      flex-direction: column;
-    }
-    .quick-links-rail a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.2rem;
-      height: 2.2rem;
-      border-radius: 9999px;
-      border: 1px solid rgba(0, 209, 255, 0.35);
-      background: rgba(6, 12, 18, 0.85);
-      color: #b7eeff;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      transition: 0.25s ease;
-    }
-    .quick-links-rail a:hover {
-      color: #081018;
-      background: var(--brand);
-      border-color: var(--brand);
-      transform: translateX(-4px);
-    }
+/* Darpan-inspired utility patterns */
+.quick-links-rail {
+position: fixed;
+right: 1.25rem;
+top: 50%;
+transform: translateY(-50%);
+z-index: 35;
+display: none;
+gap: 0.55rem;
+flex-direction: column;
+}
+.quick-links-rail a {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 2.2rem;
+height: 2.2rem;
+border-radius: 9999px;
+border: 1px solid rgba(0, 209, 255, 0.35);
+background: rgba(6, 12, 18, 0.85);
+color: #b7eeff;
+font-size: 0.72rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+transition: 0.25s ease;
+}
+.quick-links-rail a:hover {
+color: #081018;
+background: var(--brand);
+border-color: var(--brand);
+transform: translateX(-4px);
+}
 
-    .hero-stat-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.7rem;
-      margin-top: 1.25rem;
-    }
-    .hero-stat {
-      border: 1px solid rgba(0, 209, 255, 0.25);
-      background: rgba(0, 0, 0, 0.28);
-      border-radius: 0.9rem;
-      padding: 0.8rem;
-      text-align: left;
-    }
-    .hero-stat strong {
-      display: block;
-      color: var(--accent);
-      font-size: 1rem;
-    }
-    .hero-stat span {
-      color: #b5c6d9;
-      font-size: 0.78rem;
-    }
+.hero-stat-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 0.7rem;
+margin-top: 1.25rem;
+}
+.hero-stat {
+border: 1px solid rgba(0, 209, 255, 0.25);
+background: rgba(0, 0, 0, 0.28);
+border-radius: 0.9rem;
+padding: 0.8rem;
+text-align: left;
+}
+.hero-stat strong {
+display: block;
+color: var(--accent);
+font-size: 1rem;
+}
+.hero-stat span {
+color: #b5c6d9;
+font-size: 0.78rem;
+}
 
-    .inline-link-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      margin-top: 1rem;
-    }
-    .inline-link-strip a {
-      padding: 0.35rem 0.7rem;
-      border-radius: 9999px;
-      border: 1px solid rgba(163, 255, 18, 0.4);
-      color: #d5ff89;
-      background: rgba(163, 255, 18, 0.08);
-      font-size: 0.75rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .inline-link-strip a:hover {
-      background: rgba(163, 255, 18, 0.2);
-    }
+.inline-link-strip {
+display: flex;
+flex-wrap: wrap;
+gap: 0.55rem;
+margin-top: 1rem;
+}
+.inline-link-strip a {
+padding: 0.35rem 0.7rem;
+border-radius: 9999px;
+border: 1px solid rgba(163, 255, 18, 0.4);
+color: #d5ff89;
+background: rgba(163, 255, 18, 0.08);
+font-size: 0.75rem;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+}
+.inline-link-strip a:hover {
+background: rgba(163, 255, 18, 0.2);
+}
 
-    .ai-pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-    .ai-pill {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      border: 1px solid rgba(0, 209, 255, 0.35);
-      border-radius: 9999px;
-      padding: 0.32rem 0.62rem;
-      color: #bdefff;
-      background: rgba(0, 209, 255, 0.1);
-    }
-    .data-flow {
-      position: fixed;
-      inset: 0;
-      z-index: -4;
-      pointer-events: none;
-      opacity: 0.2;
-      background: repeating-linear-gradient(
-        120deg,
-        rgba(0, 209, 255, 0.1) 0,
-        rgba(0, 209, 255, 0.1) 1px,
-        transparent 1px,
-        transparent 42px
-      );
-      animation: flowShift 18s linear infinite;
-    }
-    @keyframes flowShift {
-      from { transform: translateX(0); }
-      to { transform: translateX(80px); }
-    }
+.ai-pill-row {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 0.5rem;
+margin-top: 1rem;
+}
+.ai-pill {
+font-size: 0.68rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+border: 1px solid rgba(0, 209, 255, 0.35);
+border-radius: 9999px;
+padding: 0.32rem 0.62rem;
+color: #bdefff;
+background: rgba(0, 209, 255, 0.1);
+}
+.data-flow {
+position: fixed;
+inset: 0;
+z-index: -4;
+pointer-events: none;
+opacity: 0.2;
+background: repeating-linear-gradient(
+120deg,
+rgba(0, 209, 255, 0.1) 0,
+rgba(0, 209, 255, 0.1) 1px,
+transparent 1px,
+transparent 42px
+);
+animation: flowShift 18s linear infinite;
+}
+@keyframes flowShift {
+from { transform: translateX(0); }
+to { transform: translateX(80px); }
+}
 
-    .project-card {
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(140deg, rgba(0, 209, 255, 0.12), transparent 50%);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-      pointer-events: none;
-    }
-    .project-card:hover::before { opacity: 1; }
-    .metric-line {
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-      color: #cde8ff;
-      border-left: 2px solid rgba(163, 255, 18, 0.6);
-      padding-left: 0.55rem;
-    }
-    .demo-note {
-      margin-top: 0.7rem;
-      font-size: 0.72rem;
-      color: #8fb2d5;
-    }
-    .btn-muted {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5rem 0.75rem;
-      border-radius: 0.5rem;
-      border: 1px solid rgba(140, 160, 184, 0.35);
-      color: #a3b7cf;
-      font-size: 0.82rem;
-      background: rgba(15, 23, 32, 0.6);
-      cursor: not-allowed;
-    }
+.project-card {
+position: relative;
+overflow: hidden;
+}
+.project-card::before {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(140deg, rgba(0, 209, 255, 0.12), transparent 50%);
+opacity: 0;
+transition: opacity 0.25s ease;
+pointer-events: none;
+}
+.project-card:hover::before { opacity: 1; }
+.metric-line {
+margin-top: 0.5rem;
+font-size: 0.8rem;
+color: #cde8ff;
+border-left: 2px solid rgba(163, 255, 18, 0.6);
+padding-left: 0.55rem;
+}
+.demo-note {
+margin-top: 0.7rem;
+font-size: 0.72rem;
+color: #8fb2d5;
+}
+.btn-muted {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.5rem 0.75rem;
+border-radius: 0.5rem;
+border: 1px solid rgba(140, 160, 184, 0.35);
+color: #a3b7cf;
+font-size: 0.82rem;
+background: rgba(15, 23, 32, 0.6);
+cursor: not-allowed;
+}
 
-    .cert-grid {
-      margin-top: 1.5rem;
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-    .cert-card {
-      border: 1px solid rgba(0, 209, 255, 0.25);
-      border-radius: 1rem;
-      background: rgba(0, 0, 0, 0.28);
-      padding: 1rem;
-    }
-    .cert-badge {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      color: #d8ff9f;
-    }
+.cert-grid {
+margin-top: 1.5rem;
+display: grid;
+gap: 1rem;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.cert-card {
+border: 1px solid rgba(0, 209, 255, 0.25);
+border-radius: 1rem;
+background: rgba(0, 0, 0, 0.28);
+padding: 1rem;
+}
+.cert-badge {
+font-size: 0.68rem;
+text-transform: uppercase;
+letter-spacing: 0.09em;
+color: #d8ff9f;
+}
 
-    /* Reimagined skills section */
-    .skills-shell {
-      margin-top: 1.5rem;
-      border-radius: 1.25rem;
-      border: 1px solid rgba(0, 209, 255, 0.22);
-      background:
-        radial-gradient(circle at 0% 0%, rgba(0, 209, 255, 0.14), transparent 46%),
-        radial-gradient(circle at 100% 100%, rgba(163, 255, 18, 0.08), transparent 44%),
-        rgba(0, 0, 0, 0.24);
-      padding: 1rem;
-    }
-    .skill-block {
-      border: 1px solid rgba(0, 209, 255, 0.18);
-      border-radius: 1rem;
-      padding: 1rem;
-      background: rgba(6, 12, 18, 0.7);
-    }
-    .skill-meter {
-      height: 8px;
-      border-radius: 9999px;
-      background: rgba(140, 160, 184, 0.22);
-      overflow: hidden;
-      margin-top: 0.45rem;
-    }
-    .skill-meter > span {
-      display: block;
-      height: 100%;
-      border-radius: 9999px;
-      background: linear-gradient(90deg, var(--brand), var(--accent));
-    }
-    .skill-chip-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.9rem;
-    }
-    .skill-chip {
-      font-size: 0.72rem;
-      color: #d9f4ff;
-      border: 1px solid rgba(0, 209, 255, 0.3);
-      padding: 0.28rem 0.58rem;
-      border-radius: 9999px;
-      background: rgba(0, 209, 255, 0.08);
-      letter-spacing: 0.02em;
-    }
-    .skill-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.7rem;
-      color: #c7ddf6;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
+/* Reimagined skills section */
+.skills-shell {
+margin-top: 1.5rem;
+border-radius: 1.25rem;
+border: 1px solid rgba(0, 209, 255, 0.22);
+background:
+radial-gradient(circle at 0% 0%, rgba(0, 209, 255, 0.14), transparent 46%),
+radial-gradient(circle at 100% 100%, rgba(163, 255, 18, 0.08), transparent 44%),
+rgba(0, 0, 0, 0.24);
+padding: 1rem;
+}
+.skill-block {
+border: 1px solid rgba(0, 209, 255, 0.18);
+border-radius: 1rem;
+padding: 1rem;
+background: rgba(6, 12, 18, 0.7);
+}
+.skill-meter {
+height: 8px;
+border-radius: 9999px;
+background: rgba(140, 160, 184, 0.22);
+overflow: hidden;
+margin-top: 0.45rem;
+}
+.skill-meter > span {
+display: block;
+height: 100%;
+border-radius: 9999px;
+background: linear-gradient(90deg, var(--brand), var(--accent));
+}
+.skill-chip-wrap {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+margin-top: 0.9rem;
+}
+.skill-chip {
+font-size: 0.72rem;
+color: #d9f4ff;
+border: 1px solid rgba(0, 209, 255, 0.3);
+padding: 0.28rem 0.58rem;
+border-radius: 9999px;
+background: rgba(0, 209, 255, 0.08);
+letter-spacing: 0.02em;
+}
+.skill-head {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 0.7rem;
+color: #c7ddf6;
+font-size: 0.78rem;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+}
 
-    .photo-stage {
-      position: relative;
-      width: 17rem;
-      height: 17rem;
-      display: grid;
-      place-items: center;
-      isolation: isolate;
-    }
-    .photo-stage::before {
-      content: "";
-      position: absolute;
-      inset: -0.9rem;
-      border-radius: 2rem;
-      border: 1px solid rgba(0, 209, 255, 0.35);
-      background: linear-gradient(160deg, rgba(0, 209, 255, 0.16), rgba(163, 255, 18, 0.09));
-      z-index: -1;
-    }
-    .photo-halo {
-      position: absolute;
-      inset: -2rem;
-      border-radius: 9999px;
-      background: radial-gradient(circle, rgba(0, 209, 255, 0.25), rgba(163, 255, 18, 0.08) 45%, transparent 70%);
-      filter: blur(12px);
-      animation: pulseHalo 4.5s ease-in-out infinite;
-      z-index: -2;
-    }
-    .photo-ring {
-      position: absolute;
-      width: 116%;
-      height: 116%;
-      border-radius: 9999px;
-      border: 1px dashed rgba(0, 209, 255, 0.35);
-      animation: spinRing 24s linear infinite;
-    }
-    .photo-core {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 1.2rem;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
-    }
-    .photo-chip {
-      position: absolute;
-      font-size: 0.68rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border-radius: 9999px;
-      padding: 0.3rem 0.55rem;
-      border: 1px solid rgba(0, 209, 255, 0.35);
-      background: rgba(8, 16, 24, 0.88);
-      color: #cbefff;
-      backdrop-filter: blur(4px);
-    }
-    .chip-a { top: -0.65rem; right: -0.55rem; }
-    .chip-b {
-      bottom: -0.5rem;
-      left: -0.6rem;
-      border-color: rgba(163, 255, 18, 0.5);
-      color: #dcff9d;
-    }
+.photo-stage {
+position: relative;
+width: 17rem;
+height: 17rem;
+display: grid;
+place-items: center;
+isolation: isolate;
+}
+.photo-stage::before {
+content: "";
+position: absolute;
+inset: -0.9rem;
+border-radius: 2rem;
+border: 1px solid rgba(0, 209, 255, 0.35);
+background: linear-gradient(160deg, rgba(0, 209, 255, 0.16), rgba(163, 255, 18, 0.09));
+z-index: -1;
+}
+.photo-halo {
+position: absolute;
+inset: -2rem;
+border-radius: 9999px;
+background: radial-gradient(circle, rgba(0, 209, 255, 0.25), rgba(163, 255, 18, 0.08) 45%, transparent 70%);
+filter: blur(12px);
+animation: pulseHalo 4.5s ease-in-out infinite;
+z-index: -2;
+}
+.photo-ring {
+position: absolute;
+width: 116%;
+height: 116%;
+border-radius: 9999px;
+border: 1px dashed rgba(0, 209, 255, 0.35);
+animation: spinRing 24s linear infinite;
+}
+.photo-core {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 1.2rem;
+border: 1px solid rgba(255, 255, 255, 0.15);
+box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+.photo-chip {
+position: absolute;
+font-size: 0.68rem;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+border-radius: 9999px;
+padding: 0.3rem 0.55rem;
+border: 1px solid rgba(0, 209, 255, 0.35);
+background: rgba(8, 16, 24, 0.88);
+color: #cbefff;
+backdrop-filter: blur(4px);
+}
+.chip-a { top: -0.65rem; right: -0.55rem; }
+.chip-b {
+bottom: -0.5rem;
+left: -0.6rem;
+border-color: rgba(163, 255, 18, 0.5);
+color: #dcff9d;
+}
 
-    @keyframes spinRing {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes pulseHalo {
-      0%, 100% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.06); opacity: 1; }
-    }
+@keyframes spinRing {
+from { transform: rotate(0deg); }
+to { transform: rotate(360deg); }
+}
+@keyframes pulseHalo {
+0%, 100% { transform: scale(1); opacity: 0.7; }
+50% { transform: scale(1.06); opacity: 1; }
+}
 
-    @media (min-width: 1024px) {
-      .quick-links-rail { display: flex; }
-    }
-    @media (max-width: 768px) {
-      .hero-stat-grid { grid-template-columns: 1fr; }
-      .photo-stage { width: 14rem; height: 14rem; }
-    }
-  </style>
+@media (min-width: 1024px) {
+.quick-links-rail { display: flex; }
+}
+@media (max-width: 768px) {
+.hero-stat-grid { grid-template-columns: 1fr; }
+.photo-stage { width: 14rem; height: 14rem; }
+}
+</style>
 </head>
 <body class="text-white">
-  <a href="#main" class="skip-link">Skip to content</a>
-  
+<a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- Loader -->
-  <div id="loader" aria-hidden="true">
-    <div class="flex items-center" role="status" aria-label="Loading">
-      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-    </div>
-  </div>
+<!-- Loader -->
+<div id="loader" aria-hidden="true">
+<div class="flex items-center" role="status" aria-label="Loading">
+<div class="dot"></div><div class="dot"></div><div class="dot"></div>
+</div>
+</div>
 
-  <!-- Background -->
-  <div id="aurora-field" aria-hidden="true">
-    <span class="aurora-blob b1"></span>
-    <span class="aurora-blob b2"></span>
-    <span class="aurora-blob b3"></span>
-  </div>
-  <div class="data-flow" aria-hidden="true"></div>
-  <div id="tech-grid"></div>
-  <div id="particles-js" aria-hidden="true"></div>
+<!-- Background -->
+<div id="aurora-field" aria-hidden="true">
+<span class="aurora-blob b1"></span>
+<span class="aurora-blob b2"></span>
+<span class="aurora-blob b3"></span>
+</div>
+<div class="data-flow" aria-hidden="true"></div>
+<div id="tech-grid"></div>
+<div id="particles-js" aria-hidden="true"></div>
 
-  <!-- Quick Links Rail -->
-  <aside class="quick-links-rail" aria-label="Quick section links">
-    <a href="#home" title="Home">H</a>
-    <a href="#experience" title="Experience">W</a>
-    <a href="#projects" title="Projects">P</a>
-    <a href="#contact" title="Contact">C</a>
-  </aside>
+<!-- Quick Links Rail -->
+<aside class="quick-links-rail" aria-label="Quick section links">
+<a href="#home" title="Home">H</a>
+<a href="#experience" title="Experience">W</a>
+<a href="#projects" title="Projects">P</a>
+<a href="#contact" title="Contact">C</a>
+</aside>
 
-  <!-- NAVBAR -->
-  <header class="fixed top-0 inset-x-0 z-40 bg-[#0b0f14]/80 backdrop-blur border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#home" class="brand-title font-bold tracking-tight text-xl text-cyan-300">Poojasri Kumar</a>
-      <nav class="hidden sm:block">
-        <ul class="flex items-center gap-6 text-sm text-slate-300">
-          <li><a class="hover:text-cyan-300" href="#about">About</a></li>
-          <li><a class="hover:text-cyan-300" href="#skills">Skills</a></li>
-          <li><a class="hover:text-cyan-300" href="#experience">Experience</a></li>
-          <li><a class="hover:text-cyan-300" href="#projects">Projects</a></li>
-          <li><a class="hover:text-cyan-300" href="#research">Research</a></li>
-          <li><a class="hover:text-cyan-300" href="#achievements">Achievements</a></li>
-          <li><a class="hover:text-cyan-300" href="#certifications">Certifications</a></li>
-          <li><a class="hover:text-cyan-300" href="#education">Education</a></li>
-          <li><a class="hover:text-cyan-300" href="#freelance">Freelance</a></li>
-          <li><a class="hover:text-cyan-300" href="#resume">Resume</a></li>
-          <li><a class="hover:text-cyan-300" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<!-- NAVBAR -->
+<header class="fixed top-0 inset-x-0 z-40 bg-[#0b0f14]/80 backdrop-blur border-b border-white/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<a href="#home" class="brand-title font-bold tracking-tight text-xl text-cyan-300">Poojasri Kumar</a>
+<nav class="hidden sm:block">
+<ul class="flex items-center gap-6 text-sm text-slate-300">
+<li><a class="hover:text-cyan-300" href="#about">About</a></li>
+<li><a class="hover:text-cyan-300" href="#skills">Skills</a></li>
+<li><a class="hover:text-cyan-300" href="#experience">Experience</a></li>
+<li><a class="hover:text-cyan-300" href="#projects">Projects</a></li>
+<li><a class="hover:text-cyan-300" href="#research">Research</a></li>
+<li><a class="hover:text-cyan-300" href="#achievements">Achievements</a></li>
+<li><a class="hover:text-cyan-300" href="#certifications">Certifications</a></li>
+<li><a class="hover:text-cyan-300" href="#education">Education</a></li>
+<li><a class="hover:text-cyan-300" href="#freelance">Freelance</a></li>
+<li><a class="hover:text-cyan-300" href="#resume">Resume</a></li>
+<li><a class="hover:text-cyan-300" href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-  <main id="main" class="pt-16">
-    <!-- HERO -->
-    <section id="home" class="min-h-[80vh] grid place-items-center text-center px-6" data-aos="fade-up">
-      <div class="max-w-3xl">
-        <p class="text-sm uppercase tracking-[.2em] text-slate-400">Aspiring AI Engineer</p>
-        <h1 class="mt-3 text-5xl sm:text-6xl font-bold text-cyan-200">Building Practical AI for Real People</h1>
-        <p class="mt-4 text-slate-300">I build machine learning and deep learning projects, computer vision applications, and robotics prototypes. I enjoy turning ideas into practical, user-friendly solutions.</p>
-        <div class="ai-pill-row">
-          <span class="ai-pill">GenAI</span>
-          <span class="ai-pill">LLM Apps</span>
-          <span class="ai-pill">Computer Vision</span>
-          <span class="ai-pill">NLP Systems</span>
-          <span class="ai-pill">AI Product Engineering</span>
-        </div>
-        <div class="hero-stat-grid text-left">
-          <article class="hero-stat">
-            <strong>8+ Projects</strong>
-            <span>AI, NLP, CV and full-stack builds</span>
-          </article>
-          <article class="hero-stat">
-            <strong>4 Internships</strong>
-            <span>Research, engineering, testing</span>
-          </article>
-          <article class="hero-stat">
-            <strong>1 Research Paper</strong>
-            <span>Deepfake detection work published</span>
-          </article>
-        </div>
-        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="#projects" class="px-6 py-3 rounded-xl bg-cyan-500 text-[#081018] hover:bg-cyan-400">View Projects</a>
-          <a href="#contact" class="px-6 py-3 rounded-xl border border-lime-400/70 text-lime-300 hover:bg-lime-400/10">Contact Me</a>
-        </div>
-        <div class="mt-6">
-          <a href="#experience" class="text-sm uppercase tracking-[0.18em] text-cyan-300 hover:text-cyan-200">Explore my work -></a>
-        </div>
-      </div>
-    </section>
+<main id="main" class="pt-16">
+<!-- HERO -->
+<section id="home" class="min-h-[80vh] grid place-items-center text-center px-6" data-aos="fade-up">
+<div class="max-w-3xl">
+<p class="text-sm uppercase tracking-[.2em] text-slate-400">Aspiring AI Engineer</p>
+<h1 class="mt-3 text-5xl sm:text-6xl font-bold text-cyan-200">Building Practical AI for Real People</h1>
+<p class="mt-4 text-slate-300">I build machine learning and deep learning projects, computer vision applications, and robotics prototypes. I enjoy turning ideas into practical, user-friendly solutions.</p>
+<div class="ai-pill-row">
+<span class="ai-pill">GenAI</span>
+<span class="ai-pill">LLM Apps</span>
+<span class="ai-pill">Computer Vision</span>
+<span class="ai-pill">NLP Systems</span>
+<span class="ai-pill">AI Product Engineering</span>
+</div>
+<div class="hero-stat-grid text-left">
+<article class="hero-stat">
+<strong>8+ Projects</strong>
+<span>AI, NLP, CV and full-stack builds</span>
+</article>
+<article class="hero-stat">
+<strong>4 Internships</strong>
+<span>Research, engineering, testing</span>
+</article>
+<article class="hero-stat">
+<strong>1 Research Paper</strong>
+<span>Deepfake detection work published</span>
+</article>
+</div>
+<div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+<a href="#projects" class="px-6 py-3 rounded-xl bg-cyan-500 text-[#081018] hover:bg-cyan-400">View Projects</a>
+<a href="#contact" class="px-6 py-3 rounded-xl border border-lime-400/70 text-lime-300 hover:bg-lime-400/10">Contact Me</a>
+</div>
+<div class="mt-6">
+<a href="#experience" class="text-sm uppercase tracking-[0.18em] text-cyan-300 hover:text-cyan-200">Explore my work -></a>
+</div>
+</div>
+</section>
 
-    <!-- ABOUT -->
-    <section id="about" class="py-16 px-6" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 items-center">
-        <div class="md:col-span-1">
-          <div class="photo-stage mx-auto">
-            <span class="photo-halo" aria-hidden="true"></span>
-            <span class="photo-ring" aria-hidden="true"></span>
-            <img src="assets/profile.jpg" alt="Portrait of Poojasri Kumar" class="photo-core" />
-            <span class="photo-chip chip-a">AI Engineer</span>
-            <span class="photo-chip chip-b">Builder</span>
-          </div>
-        </div>
-        <div class="md:col-span-2">
-          <h2 class="section-title text-3xl font-bold text-cyan-200">About Me</h2>
-          <p class="mt-4 text-slate-300">I'm <span class="text-cyan-300 font-semibold">Poojasri Kumar</span>, an AI and ML graduate exploring machine learning, deep learning, NLP, computer vision, and product-focused development. I am also a freelancer at my own organization, <a class="text-cyan-300 underline" href="https://poojasri06.github.io/igniq.solutions/igniq_portfolio.html" target="_blank" rel="noopener">igniq.solutions</a>.</p>
-        </div>
-      </div>
-    </section>
+<!-- ABOUT -->
+<section id="about" class="py-16 px-6" data-aos="fade-up">
+<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 items-center">
+<div class="md:col-span-1">
+<div class="photo-stage mx-auto">
+<span class="photo-halo" aria-hidden="true"></span>
+<span class="photo-ring" aria-hidden="true"></span>
+<img src="assets/profile.jpg" alt="Portrait of Poojasri Kumar" class="photo-core" />
+<span class="photo-chip chip-a">AI Engineer</span>
+<span class="photo-chip chip-b">Builder</span>
+</div>
+</div>
+<div class="md:col-span-2">
+<h2 class="section-title text-3xl font-bold text-cyan-200">About Me</h2>
+<p class="mt-4 text-slate-300">I'm <span class="text-cyan-300 font-semibold">Poojasri Kumar</span>, an AI and ML graduate exploring machine learning, deep learning, NLP, computer vision, and product-focused development. I am also a freelancer at my own organization, <a class="text-cyan-300 underline" href="https://poojasri06.github.io/igniq.solutions/igniq_portfolio.html" target="_blank" rel="noopener">igniq.solutions</a>.</p>
+</div>
+</div>
+</section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Skills & Tools</h2>
-        <p class="mt-3 text-slate-300 max-w-3xl">A compact snapshot of where I spend most of my build time, from model training to shipping usable products.</p>
+<!-- SKILLS -->
+<section id="skills" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
+<div class="max-w-6xl mx-auto">
+<h2 class="section-title text-3xl font-bold text-cyan-200">Skills & Tools</h2>
+<p class="mt-3 text-slate-300 max-w-3xl">A compact snapshot of where I spend most of my build time, from model training to shipping usable products.</p>
 
-        <div class="skills-shell">
-          <div class="grid md:grid-cols-3 gap-4">
-            <article class="skill-block">
-              <div class="skill-head">
-                <h3 class="font-semibold text-cyan-300 text-base normal-case tracking-normal">AI & ML Engineering</h3>
-                <span>Advanced</span>
-              </div>
-              <div class="skill-meter"><span style="width: 88%"></span></div>
-              <div class="skill-chip-wrap">
-                <span class="skill-chip">Python</span>
-                <span class="skill-chip">PyTorch</span>
-                <span class="skill-chip">TensorFlow</span>
-                <span class="skill-chip">Scikit-learn</span>
-                <span class="skill-chip">CNN / LSTM</span>
-                <span class="skill-chip">Transformers</span>
-              </div>
-            </article>
+<div class="skills-shell">
+<div class="grid md:grid-cols-3 gap-4">
+<article class="skill-block">
+<div class="skill-head">
+<h3 class="font-semibold text-cyan-300 text-base normal-case tracking-normal">AI & ML Engineering</h3>
+<span>Advanced</span>
+</div>
+<div class="skill-meter"><span style="width: 88%"></span></div>
+<div class="skill-chip-wrap">
+<span class="skill-chip">Python</span>
+<span class="skill-chip">PyTorch</span>
+<span class="skill-chip">TensorFlow</span>
+<span class="skill-chip">Scikit-learn</span>
+<span class="skill-chip">CNN / LSTM</span>
+<span class="skill-chip">Transformers</span>
+</div>
+</article>
 
-            <article class="skill-block">
-              <div class="skill-head">
-                <h3 class="font-semibold text-cyan-300 text-base normal-case tracking-normal">NLP & Computer Vision</h3>
-                <span>Strong</span>
-              </div>
-              <div class="skill-meter"><span style="width: 82%"></span></div>
-              <div class="skill-chip-wrap">
-                <span class="skill-chip">NLTK</span>
-                <span class="skill-chip">spaCy</span>
-                <span class="skill-chip">TextBlob</span>
-                <span class="skill-chip">OpenCV</span>
-                <span class="skill-chip">Entity Extraction</span>
-                <span class="skill-chip">Face Analysis</span>
-              </div>
-            </article>
+<article class="skill-block">
+<div class="skill-head">
+<h3 class="font-semibold text-cyan-300 text-base normal-case tracking-normal">NLP & Computer Vision</h3>
+<span>Strong</span>
+</div>
+<div class="skill-meter"><span style="width: 82%"></span></div>
+<div class="skill-chip-wrap">
+<span class="skill-chip">NLTK</span>
+<span class="skill-chip">spaCy</span>
+<span class="skill-chip">TextBlob</span>
+<span class="skill-chip">OpenCV</span>
+<span class="skill-chip">Entity Extraction</span>
+<span class="skill-chip">Face Analysis</span>
+</div>
+</article>
 
-            <article class="skill-block">
-              <div class="skill-head">
-                <h3 class="font-semibold text-cyan-300 text-base normal-case tracking-normal">Product & Deployment</h3>
-                <span>Growing</span>
-              </div>
-              <div class="skill-meter"><span style="width: 74%"></span></div>
-              <div class="skill-chip-wrap">
-                <span class="skill-chip">Flask</span>
-                <span class="skill-chip">FastAPI</span>
-                <span class="skill-chip">Streamlit</span>
-                <span class="skill-chip">Git / GitHub</span>
-                <span class="skill-chip">SQL</span>
-                <span class="skill-chip">Arduino</span>
-              </div>
-            </article>
-          </div>
+<article class="skill-block">
+<div class="skill-head">
+<h3 class="font-semibold text-cyan-300 text-base normal-case tracking-normal">Product & Deployment</h3>
+<span>Growing</span>
+</div>
+<div class="skill-meter"><span style="width: 74%"></span></div>
+<div class="skill-chip-wrap">
+<span class="skill-chip">Flask</span>
+<span class="skill-chip">FastAPI</span>
+<span class="skill-chip">Streamlit</span>
+<span class="skill-chip">Git / GitHub</span>
+<span class="skill-chip">SQL</span>
+<span class="skill-chip">Arduino</span>
+</div>
+</article>
+</div>
 
-          <div class="mt-4 grid md:grid-cols-2 gap-4">
-            <div class="rounded-xl border border-cyan-300/20 bg-black/25 p-4">
-              <p class="text-xs uppercase tracking-[0.12em] text-slate-400">Workflow Strengths</p>
-              <p class="mt-2 text-slate-300 text-sm">Rapid prototyping, data preprocessing pipelines, model evaluation, and converting experiments into portfolio-ready apps.</p>
-            </div>
-            <div class="rounded-xl border border-cyan-300/20 bg-black/25 p-4">
-              <p class="text-xs uppercase tracking-[0.12em] text-slate-400">Collaboration Style</p>
-              <p class="mt-2 text-slate-300 text-sm">Clear documentation, test-minded implementation, and iterative delivery with feedback from mentors and teammates.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Experience -->
-    <section id="experience" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Internship Experience</h2>
-        <div class="timeline">
-          <article class="timeline-item">
-            <h3 class="font-semibold text-cyan-300">AI Research Intern <span class="text-slate-400">(2026)</span></h3>
-            <p class="mt-1 text-sm text-slate-400">Overload Ware Labs - AI Division</p>
-            <ul class="mt-3 text-slate-300 list-disc list-inside">
-              <li>Prototyped deep learning and computer vision solutions using PyTorch and OpenCV for real-world tasks.</li>
-              <li>Improved baseline model accuracy by 12% through hyperparameter tuning and architecture experiments.</li>
-              <li>Produced weekly research documentation and technical walkthroughs for the engineering team.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <h3 class="font-semibold text-cyan-300">Machine Learning Intern <span class="text-slate-400">(2025)</span></h3>
-            <p class="mt-1 text-sm text-slate-400">Prinston Smart Engineers</p>
-            <ul class="mt-3 text-slate-300 list-disc list-inside">
-              <li>Trained image classification and predictive ML models using Python and scikit-learn.</li>
-              <li>Built scalable data preprocessing pipelines, reducing training preparation time by 30%.</li>
-              <li>Deployed models through Flask REST APIs for real-time inference.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <h3 class="font-semibold text-cyan-300">Full-Stack Development Intern <span class="text-slate-400">(2025)</span></h3>
-            <p class="mt-1 text-sm text-slate-400">Intraq Software Technology</p>
-            <ul class="mt-3 text-slate-300 list-disc list-inside">
-              <li>Built FastAPI backends and data visualization dashboards integrating AI model outputs.</li>
-              <li>Optimized MongoDB queries and introduced caching, reducing API latency by 25%.</li>
-              <li>Delivered production-ready APIs and frontend integrations for internal tools.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <h3 class="font-semibold text-cyan-300">Application Testing Intern (Hybrid) <span class="text-slate-400">(2026 - Present)</span></h3>
-            <p class="mt-1 text-sm text-slate-400">Kealogics Technologies Pvt. Ltd., Bengaluru</p>
-            <ul class="mt-3 text-slate-300 list-disc list-inside">
-              <li>Tested AI-powered application modules and logged 40+ issues using JIRA.</li>
-              <li>Wrote and maintained test case documentation, increasing QA coverage by 20%.</li>
-              <li>Collaborated with developers to verify fixes and reduce regression defects.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
+<div class="mt-4 grid md:grid-cols-2 gap-4">
+<div class="rounded-xl border border-cyan-300/20 bg-black/25 p-4">
+<p class="text-xs uppercase tracking-[0.12em] text-slate-400">Workflow Strengths</p>
+<p class="mt-2 text-slate-300 text-sm">Rapid prototyping, data preprocessing pipelines, model evaluation, and converting experiments into portfolio-ready apps.</p>
+</div>
+<div class="rounded-xl border border-cyan-300/20 bg-black/25 p-4">
+<p class="text-xs uppercase tracking-[0.12em] text-slate-400">Collaboration Style</p>
+<p class="mt-2 text-slate-300 text-sm">Clear documentation, test-minded implementation, and iterative delivery with feedback from mentors and teammates.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
 
-    <!-- PROJECTS -->
-    <section id="projects" class="py-16 px-6" data-aos="fade-up">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Featured Projects</h2>
-        <div class="inline-link-strip">
-          <a href="https://github.com/Poojasri06?tab=repositories" target="_blank" rel="noopener">Browse all repos</a>
-          <a href="./resume.html" target="_blank" rel="noopener">One-page resume</a>
-          <a href="https://poojasri06.github.io/igniq.solutions/igniq_portfolio.html" target="_blank" rel="noopener">Freelance work</a>
-        </div>
-        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Career GPS -->
-          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-cyan-100">Career GPS</h3>
-              <p class="mt-2 text-sm text-slate-300">AI-driven career navigation platform that maps skills, interests, market demand, and future opportunities into an actionable career roadmap for students and early professionals.</p>
-              <p class="metric-line">Built end-to-end recommendation and role-matching flow with personalized learning path generation for early-career users.</p>
-              <div class="tag-wrap">
-                <span class="tech-tag">ML</span>
-                <span class="tech-tag">NLP</span>
-                <span class="tech-tag">Python</span>
-              </div>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/career-gps" target="_blank" rel="noopener">GitHub</a>
-                <a class="px-3 py-2 rounded-lg border border-lime-400/70 text-lime-300 hover:bg-lime-400/10 text-sm" href="https://career-gps-jvdme5zsg9p45rgkqycggu.streamlit.app/" target="_blank" rel="noopener">Live Demo</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Celeste Map -->
-          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-cyan-100">Celeste Map</h3>
-              <p class="mt-2 text-sm text-slate-300">NLP-driven threat intelligence platform with entity extraction and risk scoring, built with Flask and PostgreSQL.</p>
-              <p class="metric-line">Designed to surface high-risk alerts faster by combining keyword intelligence, context extraction, and weighted risk scoring.</p>
-              <div class="tag-wrap">
-                <span class="tech-tag">NLP</span>
-                <span class="tech-tag">Flask</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">Streamlit</span>
-              </div>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/Celeste-map" target="_blank" rel="noopener">GitHub</a>
-                <span class="btn-muted" aria-disabled="true">Live Demo (Deploying)</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Crypto Analytics -->
-          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-cyan-100">Real-Time Cryptocurrency Analytics App</h3>
-              <p class="mt-2 text-sm text-slate-300">Full-stack crypto analytics platform with live price tracking, USD to INR conversion, and NLP-based sentiment analysis for 10 cryptocurrencies.</p>
-              <div class="tag-wrap">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">NLP</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Analytics</span>
-              </div>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/crypto-insight" target="_blank" rel="noopener">GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Aura Derm -->
-          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-cyan-100">Aura Derm - AI Skincare Advisor</h3>
-              <p class="mt-2 text-sm text-slate-300">Detects facial skin concerns and recommends products and diet suggestions.</p>
-              <p class="metric-line">Trained on a curated dermatology image set and reached 89% validation accuracy for multi-class skin concern detection.</p>
-              <p class="demo-note">Includes condition-wise confidence scoring to improve decision transparency.</p>
-              <div class="tag-wrap">
-                <span class="tech-tag">CV</span>
-                <span class="tech-tag">DL</span>
-              </div>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/Aura_derm" target="_blank" rel="noopener">GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Mini Humanoid Robot -->
-          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-cyan-100">Mini Humanoid Robot</h3>
-              <p class="mt-2 text-sm text-slate-300">Arduino-based robot with sensors and robotic arm integration.</p>
-              <p class="metric-line">Implemented sensor-driven obstacle response and gesture-like arm routines for interactive movement sequences.</p>
-              <p class="demo-note">Built control logic to combine distance sensing, motor commands, and stability checks in real time.</p>
-              <div class="tag-wrap">
-                <span class="tech-tag">Robotics</span>
-                <span class="tech-tag">CV</span>
-              </div>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/mini-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Deepfake Video Detection -->
-          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-cyan-100">Deepfake Video Detection</h3>
-              <p class="mt-2 text-sm text-slate-300">Detects face-swap deepfakes using CNN and temporal analysis methods.</p>
-              <p class="metric-line">Achieved 94.2% benchmark accuracy on FaceForensics++ using frame-level CNN features with temporal consistency checks.</p>
-              <p class="demo-note">Focused on reducing false positives in low-light and compression-heavy video samples.</p>
-              <div class="tag-wrap">
-                <span class="tech-tag">CV</span>
-                <span class="tech-tag">DL</span>
-              </div>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/Deepfake-video-detection" target="_blank" rel="noopener">GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Titanic Survival Prediction -->
-          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-cyan-100">Titanic Survival Prediction</h3>
-              <p class="mt-2 text-sm text-slate-300">Machine learning classification model using passenger data features.</p>
-              <div class="tag-wrap">
-                <span class="tech-tag">ML</span>
-                <span class="tech-tag">Python</span>
-              </div>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/titanic-survival-prediction" target="_blank" rel="noopener">GitHub</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Hand Speak -->
-          <article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
-            <div class="p-5">
-              <h3 class="text-lg font-semibold text-cyan-100">Hand Speak</h3>
-              <p class="mt-2 text-sm text-slate-300">Converts hand gestures into real-time text and voice output from live camera input.</p>
-              <p class="metric-line">Reached 92% gesture-to-text accuracy in internal testing with near real-time inference around 200-250ms per frame.</p>
-              <p class="demo-note">Optimized preprocessing and frame sampling for smoother camera-to-output experience.</p>
-              <div class="tag-wrap">
-                <span class="tech-tag">CV</span>
-                <span class="tech-tag">NLP</span>
-                <span class="tech-tag">DL</span>
-              </div>
-              <div class="mt-4 flex gap-3">
-                <a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/hand_speak" target="_blank" rel="noopener">GitHub</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-        <!-- PROJECT VIDEO DEMOS -->
-    <section id="video-demos" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Project Walkthroughs</h2>
-        <p class="mt-3 text-slate-300 mb-8">Interactive demonstrations of my AI systems in action.</p>
-
-        <div class="video-portfolio-wrapper">
-          <!-- Main Display -->
-          <div class="main-video-container">
-            <div class="video-glow-effect"></div>
-            <video id="mainVideo" controls autoplay muted class="main-video-element">
-              <source src="videos/demo1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <!-- Thumbnails Rail -->
-          <div class="video-thumb-grid">
-            <!-- Thumbnail 1 -->
-            <div class="video-thumb active" data-video="videos/demo1.mp4">
-              <div class="thumb-img-wrap">
-                <img src="assets/thumb1.jpg" alt="Career GPS Demo">
-                <div class="thumb-overlay"><span>Play Demo</span></div>
-              </div>
-              <p class="thumb-label">Career GPS</p>
-            </div>
-
-            <!-- Thumbnail 2 -->
-            <div class="video-thumb" data-video="videos/demo2.mp4">
-              <div class="thumb-img-wrap">
-                <img src="assets/thumb2.jpg" alt="Hand Speak Demo">
-                <div class="thumb-overlay"><span>Play Demo</span></div>
-              </div>
-              <p class="thumb-label">Hand Speak</p>
-            </div>
-
-            <!-- Thumbnail 3 -->
-            <div class="video-thumb" data-video="videos/demo3.mp4">
-              <div class="thumb-img-wrap">
-                <img src="assets/thumb3.jpg" alt="Aura Derm Demo">
-                <div class="thumb-overlay"><span>Play Demo</span></div>
-              </div>
-              <p class="thumb-label">Aura Derm</p>
-            </div>
-            
-            <!-- Add more thumbnails as needed -->
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- Experience -->
+<section id="experience" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
+<div class="max-w-6xl mx-auto">
+<h2 class="section-title text-3xl font-bold text-cyan-200">Internship Experience</h2>
+<div class="timeline">
+<article class="timeline-item">
+<h3 class="font-semibold text-cyan-300">AI Research Intern <span class="text-slate-400">(2026)</span></h3>
+<p class="mt-1 text-sm text-slate-400">Overload Ware Labs - AI Division</p>
+<ul class="mt-3 text-slate-300 list-disc list-inside">
+<li>Prototyped deep learning and computer vision solutions using PyTorch and OpenCV for real-world tasks.</li>
+<li>Improved baseline model accuracy by 12% through hyperparameter tuning and architecture experiments.</li>
+<li>Produced weekly research documentation and technical walkthroughs for the engineering team.</li>
+</ul>
+</article>
+<article class="timeline-item">
+<h3 class="font-semibold text-cyan-300">Machine Learning Intern <span class="text-slate-400">(2025)</span></h3>
+<p class="mt-1 text-sm text-slate-400">Prinston Smart Engineers</p>
+<ul class="mt-3 text-slate-300 list-disc list-inside">
+<li>Trained image classification and predictive ML models using Python and scikit-learn.</li>
+<li>Built scalable data preprocessing pipelines, reducing training preparation time by 30%.</li>
+<li>Deployed models through Flask REST APIs for real-time inference.</li>
+</ul>
+</article>
+<article class="timeline-item">
+<h3 class="font-semibold text-cyan-300">Full-Stack Development Intern <span class="text-slate-400">(2025)</span></h3>
+<p class="mt-1 text-sm text-slate-400">Intraq Software Technology</p>
+<ul class="mt-3 text-slate-300 list-disc list-inside">
+<li>Built FastAPI backends and data visualization dashboards integrating AI model outputs.</li>
+<li>Optimized MongoDB queries and introduced caching, reducing API latency by 25%.</li>
+<li>Delivered production-ready APIs and frontend integrations for internal tools.</li>
+</ul>
+</article>
+<article class="timeline-item">
+<h3 class="font-semibold text-cyan-300">Application Testing Intern (Hybrid) <span class="text-slate-400">(2026 - Present)</span></h3>
+<p class="mt-1 text-sm text-slate-400">Kealogics Technologies Pvt. Ltd., Bengaluru</p>
+<ul class="mt-3 text-slate-300 list-disc list-inside">
+<li>Tested AI-powered application modules and logged 40+ issues using JIRA.</li>
+<li>Wrote and maintained test case documentation, increasing QA coverage by 20%.</li>
+<li>Collaborated with developers to verify fixes and reduce regression defects.</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
 
 
-    <!-- RESEARCH -->
-    <section id="research" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Research</h2>
-        <article class="mt-8 rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
-          <h3 class="text-xl font-semibold text-cyan-100">Deepfake Detection Using Deep Learning</h3>
-          <p class="mt-2 text-sm text-slate-400">Co-authored with Ragavi and Janani P. | Undergraduate manuscript (Under Review)</p>
-          <ul class="mt-4 text-slate-300 list-disc list-inside">
-            <li><span class="text-lime-300 font-semibold">94.2% benchmark accuracy</span> on FaceForensics++ using CNN and temporal consistency analysis.</li>
-            <li>Documented model architecture, dataset curation, and facial landmark tracking methodology with reproducible experiment setup.</li>
-            <li>Research/code reference: <a class="text-cyan-300 underline" href="https://github.com/Poojasri06/Deepfake-video-detection" target="_blank" rel="noopener">Project repository and materials</a>.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+<!-- PROJECTS -->
+<section id="projects" class="py-16 px-6" data-aos="fade-up">
+<div class="max-w-7xl mx-auto">
+<h2 class="section-title text-3xl font-bold text-cyan-200">Featured Projects</h2>
+<div class="inline-link-strip">
+<a href="https://github.com/Poojasri06?tab=repositories" target="_blank" rel="noopener">Browse all repos</a>
+<a href="./resume.html" target="_blank" rel="noopener">One-page resume</a>
+<a href="https://poojasri06.github.io/igniq.solutions/igniq_portfolio.html" target="_blank" rel="noopener">Freelance work</a>
+</div>
+<div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Career GPS -->
+<article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+<div class="p-5">
+<h3 class="text-lg font-semibold text-cyan-100">Career GPS</h3>
+<p class="mt-2 text-sm text-slate-300">AI-driven career navigation platform that maps skills, interests, market demand, and future opportunities into an actionable career roadmap for students and early professionals.</p>
+<p class="metric-line">Built end-to-end recommendation and role-matching flow with personalized learning path generation for early-career users.</p>
+<div class="tag-wrap">
+<span class="tech-tag">ML</span>
+<span class="tech-tag">NLP</span>
+<span class="tech-tag">Python</span>
+</div>
+<div class="mt-4 flex gap-3">
+<a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/career-gps" target="_blank" rel="noopener">GitHub</a>
+<a class="px-3 py-2 rounded-lg border border-lime-400/70 text-lime-300 hover:bg-lime-400/10 text-sm" href="https://career-gps-jvdme5zsg9p45rgkqycggu.streamlit.app/" target="_blank" rel="noopener">Live Demo</a>
+</div>
+</div>
+</article>
 
-    <!-- ACHIEVEMENTS -->
-    <section id="achievements" class="py-16 px-6" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Achievements and Activities</h2>
-        <div class="mt-8 rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
-          <ul class="text-slate-300 list-disc list-inside space-y-2">
-            <li>HackOverFlow Hackathon Participant - CultRang '26, built and pitched an NLP-powered AI solution in 24 hours.</li>
-            <li>Co-authored undergraduate research paper on deepfake detection with 94.2% benchmark accuracy.</li>
-            <li>Completed 4 internships across AI research, ML engineering, full-stack development, and QA.</li>
-            <li>Completed Google Gen AI Academy APAC Edition with practical labs on MCP, ADK, Vertex AI, and A2A systems on Google Cloud.</li>
-            <li>Built Career GPS as an end-to-end GenAI-guided career planning platform from idea to working prototype.</li>
-            <li>Received positive feedback during internships for ownership, technical documentation quality, and reliable delivery.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<!-- Celeste Map -->
+<article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+<div class="p-5">
+<h3 class="text-lg font-semibold text-cyan-100">Celeste Map</h3>
+<p class="mt-2 text-sm text-slate-300">NLP-driven threat intelligence platform with entity extraction and risk scoring, built with Flask and PostgreSQL.</p>
+<p class="metric-line">Designed to surface high-risk alerts faster by combining keyword intelligence, context extraction, and weighted risk scoring.</p>
+<div class="tag-wrap">
+<span class="tech-tag">NLP</span>
+<span class="tech-tag">Flask</span>
+<span class="tech-tag">PostgreSQL</span>
+<span class="tech-tag">Streamlit</span>
+</div>
+<div class="mt-4 flex gap-3">
+<a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/Celeste-map" target="_blank" rel="noopener">GitHub</a>
+<span class="btn-muted" aria-disabled="true">Live Demo (Deploying)</span>
+</div>
+</div>
+</article>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Certifications</h2>
-        <div class="cert-grid">
-          <article class="cert-card">
-            <p class="cert-badge">Google Cloud</p>
-            <h3 class="mt-2 text-lg font-semibold text-cyan-100">Google Gen AI Academy - APAC Edition</h3>
-            <p class="mt-2 text-sm text-slate-300">Completed hands-on labs and guided modules focused on practical GenAI engineering workflows.</p>
-            <ul class="mt-3 text-sm text-slate-300 list-disc list-inside space-y-1">
-              <li>MCP workflows and agent integration patterns</li>
-              <li>ADK-based prototyping and orchestration</li>
-              <li>Vertex AI and A2A lab workflows on Google Cloud</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
+<!-- Crypto Analytics -->
+<article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+<div class="p-5">
+<h3 class="text-lg font-semibold text-cyan-100">Real-Time Cryptocurrency Analytics App</h3>
+<p class="mt-2 text-sm text-slate-300">Full-stack crypto analytics platform with live price tracking, USD to INR conversion, and NLP-based sentiment analysis for 10 cryptocurrencies.</p>
+<div class="tag-wrap">
+<span class="tech-tag">Python</span>
+<span class="tech-tag">NLP</span>
+<span class="tech-tag">JavaScript</span>
+<span class="tech-tag">Analytics</span>
+</div>
+<div class="mt-4 flex gap-3">
+<a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/crypto-insight" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div>
+</article>
 
-    <!-- EDUCATION -->
-    <section id="education" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Education</h2>
-        <div class="mt-8 grid md:grid-cols-2 gap-6">
-          <article class="rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
-            <h3 class="font-semibold text-cyan-100">B.Sc. Artificial Intelligence and Machine Learning</h3>
-            <p class="mt-1 text-sm text-slate-400">Vivekanandha College of Arts and Science for Women, Tiruchengode</p>
-            <p class="mt-2 text-slate-300">2023 - 2026 | CGPA: 7.0 / 10</p>
-          </article>
-          <article class="rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
-            <h3 class="font-semibold text-cyan-100">Higher Secondary (HSC)</h3>
-            <p class="mt-1 text-sm text-slate-400">Sowdambikaa Matriculation Higher Secondary School, Thottiyam</p>
-            <p class="mt-2 text-slate-300">Score: 75%</p>
-          </article>
-        </div>
-      </div>
-    </section>
+<!-- Aura Derm -->
+<article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+<div class="p-5">
+<h3 class="text-lg font-semibold text-cyan-100">Aura Derm - AI Skincare Advisor</h3>
+<p class="mt-2 text-sm text-slate-300">Detects facial skin concerns and recommends products and diet suggestions.</p>
+<p class="metric-line">Trained on a curated dermatology image set and reached 89% validation accuracy for multi-class skin concern detection.</p>
+<p class="demo-note">Includes condition-wise confidence scoring to improve decision transparency.</p>
+<div class="tag-wrap">
+<span class="tech-tag">CV</span>
+<span class="tech-tag">DL</span>
+</div>
+<div class="mt-4 flex gap-3">
+<a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/Aura_derm" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div>
+</article>
 
-    <!-- FREELANCE -->
-    <section id="freelance" class="py-16 px-6" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Freelance and Founder Work</h2>
-        <div class="mt-8 rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
-          <p class="text-slate-300">I am the founder of <span class="text-cyan-300 font-semibold">IGNIQ Solutions</span>, where I build AI-driven and web-based solutions for early-stage teams and student founders.</p>
-          <ul class="mt-4 text-slate-300 list-disc list-inside space-y-2">
-            <li>Developed AI-assisted web products combining NLP/CV modules with lightweight dashboards.</li>
-            <li>Delivered rapid MVP builds with clear handoff documentation and deployment-ready structure.</li>
-            <li>Improved turnaround and quality through reusable components, reducing typical prototype iteration cycles.</li>
-          </ul>
-          <a class="mt-4 inline-flex px-4 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400" href="https://poojasri06.github.io/igniq.solutions/igniq_portfolio.html" target="_blank" rel="noopener">View igniq.solutions Portfolio</a>
-        </div>
-      </div>
-    </section>
+<!-- Mini Humanoid Robot -->
+<article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+<div class="p-5">
+<h3 class="text-lg font-semibold text-cyan-100">Mini Humanoid Robot</h3>
+<p class="mt-2 text-sm text-slate-300">Arduino-based robot with sensors and robotic arm integration.</p>
+<p class="metric-line">Implemented sensor-driven obstacle response and gesture-like arm routines for interactive movement sequences.</p>
+<p class="demo-note">Built control logic to combine distance sensing, motor commands, and stability checks in real time.</p>
+<div class="tag-wrap">
+<span class="tech-tag">Robotics</span>
+<span class="tech-tag">CV</span>
+</div>
+<div class="mt-4 flex gap-3">
+<a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/mini-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div>
+</article>
 
-    <!-- RESUME -->
-    <section id="resume" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Resume</h2>
-        <p class="mt-3 text-slate-300">View my live resume or download as PDF</p>
-        <div class="mt-5 flex flex-wrap gap-3 justify-center">
-          <a href="./resume.html" class="inline-flex px-6 py-3 rounded-xl bg-cyan-500 text-[#0b0f14] hover:bg-cyan-400 font-semibold transition">View Live Resume</a>
-          <a href="./assets/PoojaSri_Resume.pdf" download class="inline-flex px-6 py-3 rounded-xl bg-lime-400 text-[#111a11] hover:bg-lime-300 font-semibold transition">Download PDF</a>
-        </div>
-      </div>
-    </section>
+<!-- Deepfake Video Detection -->
+<article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+<div class="p-5">
+<h3 class="text-lg font-semibold text-cyan-100">Deepfake Video Detection</h3>
+<p class="mt-2 text-sm text-slate-300">Detects face-swap deepfakes using CNN and temporal analysis methods.</p>
+<p class="metric-line">Achieved 94.2% benchmark accuracy on FaceForensics++ using frame-level CNN features with temporal consistency checks.</p>
+<p class="demo-note">Focused on reducing false positives in low-light and compression-heavy video samples.</p>
+<div class="tag-wrap">
+<span class="tech-tag">CV</span>
+<span class="tech-tag">DL</span>
+</div>
+<div class="mt-4 flex gap-3">
+<a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/Deepfake-video-detection" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div>
+</article>
 
-    <!-- CONTACT -->
-    <section id="contact" class="py-16 px-6" data-aos="fade-up">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="section-title text-3xl font-bold text-cyan-200">Reach Out</h2>
-        <p class="mt-2 text-slate-400">Let's connect for internships, collaborations, and AI project discussions.</p>
+<!-- Titanic Survival Prediction -->
+<article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+<div class="p-5">
+<h3 class="text-lg font-semibold text-cyan-100">Titanic Survival Prediction</h3>
+<p class="mt-2 text-sm text-slate-300">Machine learning classification model using passenger data features.</p>
+<div class="tag-wrap">
+<span class="tech-tag">ML</span>
+<span class="tech-tag">Python</span>
+</div>
+<div class="mt-4 flex gap-3">
+<a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/titanic-survival-prediction" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div>
+</article>
 
-        <div class="mt-8 grid sm:grid-cols-3 gap-4 text-left">
-          <article class="rounded-xl border border-cyan-400/25 bg-black/30 p-4">
-            <p class="text-xs uppercase tracking-[0.14em] text-slate-400">Email</p>
-            <a class="mt-2 block text-cyan-300 underline break-all" href="mailto:poojasrikumar006@gmail.com">poojasrikumar006@gmail.com</a>
-          </article>
+<!-- Hand Speak -->
+<article class="project-card rounded-2xl overflow-hidden bg-[#121a23]/80 border border-cyan-300/20">
+<div class="p-5">
+<h3 class="text-lg font-semibold text-cyan-100">Hand Speak</h3>
+<p class="mt-2 text-sm text-slate-300">Converts hand gestures into real-time text and voice output from live camera input.</p>
+<p class="metric-line">Reached 92% gesture-to-text accuracy in internal testing with near real-time inference around 200-250ms per frame.</p>
+<p class="demo-note">Optimized preprocessing and frame sampling for smoother camera-to-output experience.</p>
+<div class="tag-wrap">
+<span class="tech-tag">CV</span>
+<span class="tech-tag">NLP</span>
+<span class="tech-tag">DL</span>
+</div>
+<div class="mt-4 flex gap-3">
+<a class="px-3 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400 text-sm" href="https://github.com/Poojasri06/hand_speak" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
 
-          <article class="rounded-xl border border-cyan-400/25 bg-black/30 p-4">
-            <p class="text-xs uppercase tracking-[0.14em] text-slate-400">LinkedIn</p>
-            <a class="mt-2 block text-cyan-300 underline break-all" href="https://www.linkedin.com/in/poojasrikumar06" target="_blank" rel="noopener">linkedin.com/in/poojasrikumar06</a>
-          </article>
+<!-- RESEARCH -->
+<section id="research" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
+<div class="max-w-6xl mx-auto">
+<h2 class="section-title text-3xl font-bold text-cyan-200">Research</h2>
+<article class="mt-8 rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+<h3 class="text-xl font-semibold text-cyan-100">Deepfake Detection Using Deep Learning</h3>
+<p class="mt-2 text-sm text-slate-400">Co-authored with Ragavi and Janani P. | Undergraduate manuscript (Under Review)</p>
+<ul class="mt-4 text-slate-300 list-disc list-inside">
+<li><span class="text-lime-300 font-semibold">94.2% benchmark accuracy</span> on FaceForensics++ using CNN and temporal consistency analysis.</li>
+<li>Documented model architecture, dataset curation, and facial landmark tracking methodology with reproducible experiment setup.</li>
+<li>Research/code reference: <a class="text-cyan-300 underline" href="https://github.com/Poojasri06/Deepfake-video-detection" target="_blank" rel="noopener">Project repository and materials</a>.</li>
+</ul>
+</article>
+</div>
+</section>
 
-          <article class="rounded-xl border border-cyan-400/25 bg-black/30 p-4">
-            <p class="text-xs uppercase tracking-[0.14em] text-slate-400">GitHub</p>
-            <a class="mt-2 block text-cyan-300 underline break-all" href="https://github.com/Poojasri06" target="_blank" rel="noopener">github.com/Poojasri06</a>
-          </article>
-        </div>
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="py-16 px-6" data-aos="fade-up">
+<div class="max-w-6xl mx-auto">
+<h2 class="section-title text-3xl font-bold text-cyan-200">Achievements and Activities</h2>
+<div class="mt-8 rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+<ul class="text-slate-300 list-disc list-inside space-y-2">
+<li>HackOverFlow Hackathon Participant - CultRang '26, built and pitched an NLP-powered AI solution in 24 hours.</li>
+<li>Co-authored undergraduate research paper on deepfake detection with 94.2% benchmark accuracy.</li>
+<li>Completed 4 internships across AI research, ML engineering, full-stack development, and QA.</li>
+<li>Completed Google Gen AI Academy APAC Edition with practical labs on MCP, ADK, Vertex AI, and A2A systems on Google Cloud.</li>
+<li>Built Career GPS as an end-to-end GenAI-guided career planning platform from idea to working prototype.</li>
+<li>Received positive feedback during internships for ownership, technical documentation quality, and reliable delivery.</li>
+</ul>
+</div>
+</div>
+</section>
 
-        <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
-          <a class="px-4 py-2 rounded-lg border border-cyan-400/40 text-slate-200 hover:border-cyan-300 hover:text-cyan-200" href="mailto:poojasrikumar006@gmail.com">Email Me</a>
-          <a class="px-4 py-2 rounded-lg border border-cyan-400/40 text-slate-200 hover:border-cyan-300 hover:text-cyan-200" href="https://github.com/Poojasri06" target="_blank" rel="noopener">GitHub</a>
-          <a class="px-4 py-2 rounded-lg border border-cyan-400/40 text-slate-200 hover:border-cyan-300 hover:text-cyan-200" href="https://www.linkedin.com/in/poojasrikumar06" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="px-4 py-2 rounded-lg border border-cyan-400/40 text-slate-200 hover:border-cyan-300 hover:text-cyan-200" href="https://medium.com/@poojasrikumar006" target="_blank" rel="noopener">Medium</a>
-        </div>
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
+<div class="max-w-6xl mx-auto">
+<h2 class="section-title text-3xl font-bold text-cyan-200">Certifications</h2>
+<div class="cert-grid">
+<article class="cert-card">
+<p class="cert-badge">Google Cloud</p>
+<h3 class="mt-2 text-lg font-semibold text-cyan-100">Google Gen AI Academy - APAC Edition</h3>
+<p class="mt-2 text-sm text-slate-300">Completed hands-on labs and guided modules focused on practical GenAI engineering workflows.</p>
+<ul class="mt-3 text-sm text-slate-300 list-disc list-inside space-y-1">
+<li>MCP workflows and agent integration patterns</li>
+<li>ADK-based prototyping and orchestration</li>
+<li>Vertex AI and A2A lab workflows on Google Cloud</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
 
-        <div class="mt-8 rounded-2xl p-5 border border-lime-300/20 bg-lime-300/[0.04] text-left">
-          <p class="text-xs uppercase tracking-[0.15em] text-lime-300">Additional Links</p>
-          <div class="mt-3 flex flex-wrap gap-3 text-sm">
-            <a class="text-cyan-300 hover:text-cyan-200 underline" href="#projects">Projects</a>
-            <a class="text-cyan-300 hover:text-cyan-200 underline" href="#research">Research</a>
-            <a class="text-cyan-300 hover:text-cyan-200 underline" href="#experience">Work</a>
-            <a class="text-cyan-300 hover:text-cyan-200 underline" href="#resume">Resume</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<!-- EDUCATION -->
+<section id="education" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
+<div class="max-w-6xl mx-auto">
+<h2 class="section-title text-3xl font-bold text-cyan-200">Education</h2>
+<div class="mt-8 grid md:grid-cols-2 gap-6">
+<article class="rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+<h3 class="font-semibold text-cyan-100">B.Sc. Artificial Intelligence and Machine Learning</h3>
+<p class="mt-1 text-sm text-slate-400">Vivekanandha College of Arts and Science for Women, Tiruchengode</p>
+<p class="mt-2 text-slate-300">2023 - 2026 | CGPA: 7.0 / 10</p>
+</article>
+<article class="rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+<h3 class="font-semibold text-cyan-100">Higher Secondary (HSC)</h3>
+<p class="mt-1 text-sm text-slate-400">Sowdambikaa Matriculation Higher Secondary School, Thottiyam</p>
+<p class="mt-2 text-slate-300">Score: 75%</p>
+</article>
+</div>
+</div>
+</section>
 
-  <footer class="border-t border-white/10 text-center py-6 text-slate-400 text-sm">
-    © <span id="year"></span> Poojasri Kumar — AI Portfolio
-  </footer>
+<!-- FREELANCE -->
+<section id="freelance" class="py-16 px-6" data-aos="fade-up">
+<div class="max-w-6xl mx-auto">
+<h2 class="section-title text-3xl font-bold text-cyan-200">Freelance and Founder Work</h2>
+<div class="mt-8 rounded-2xl p-6 bg-black/30 border border-cyan-300/20">
+<p class="text-slate-300">I am the founder of <span class="text-cyan-300 font-semibold">IGNIQ Solutions</span>, where I build AI-driven and web-based solutions for early-stage teams and student founders.</p>
+<ul class="mt-4 text-slate-300 list-disc list-inside space-y-2">
+<li>Developed AI-assisted web products combining NLP/CV modules with lightweight dashboards.</li>
+<li>Delivered rapid MVP builds with clear handoff documentation and deployment-ready structure.</li>
+<li>Improved turnaround and quality through reusable components, reducing typical prototype iteration cycles.</li>
+</ul>
+<a class="mt-4 inline-flex px-4 py-2 rounded-lg bg-cyan-500 text-[#081018] hover:bg-cyan-400" href="https://poojasri06.github.io/igniq.solutions/igniq_portfolio.html" target="_blank" rel="noopener">View igniq.solutions Portfolio</a>
+</div>
+</div>
+</section>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ once: true });</script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      particles:{ number:{value:40}, color:{value:"#00D1FF"}, shape:{type:"circle"},
-      opacity:{value:.35}, size:{value:2}, line_linked:{enable:true, distance:120, color:"#00D1FF", opacity:.2, width:1}, move:{enable:true, speed:1} },
-      interactivity:{ events:{ onhover:{enable:true, mode:"grab"} }, modes:{ grab:{distance:140,line_linked:{opacity:.3}} } }, retina_detect:true
-    });
-    // Loader hide
-    window.addEventListener('load',()=>{ setTimeout(()=>{ document.getElementById('loader').style.display='none'; },500); });
-    // Year
-    document.getElementById('year').textContent=new Date().getFullYear();
-    // Cursor sparkle
-    document.addEventListener("mousemove", e=>{
-      let s=document.createElement("div");
-      s.className="sparkle";
-      s.style.left=e.pageX+"px";
-      s.style.top=e.pageY+"px";
-      document.body.appendChild(s);
-      setTimeout(()=>s.remove(),800);
-    });
-        // ==========================================
-    // VIDEO PORTFOLIO SWITCHER LOGIC
-    // ==========================================
-    document.addEventListener('DOMContentLoaded', () => {
-      const mainVideo = document.getElementById('mainVideo');
-      const thumbnails = document.querySelectorAll('.video-thumb');
+<!-- RESUME -->
+<section id="resume" class="py-16 px-6 bg-[#0f1822]/60" data-aos="fade-up">
+<div class="max-w-6xl mx-auto text-center">
+<h2 class="section-title text-3xl font-bold text-cyan-200">Resume</h2>
+<p class="mt-3 text-slate-300">View my live resume or download as PDF</p>
+<div class="mt-5 flex flex-wrap gap-3 justify-center">
+<a href="./resume.html" class="inline-flex px-6 py-3 rounded-xl bg-cyan-500 text-[#0b0f14] hover:bg-cyan-400 font-semibold transition">View Live Resume</a>
+<a href="./assets/PoojaSri_Resume.pdf" download class="inline-flex px-6 py-3 rounded-xl bg-lime-400 text-[#111a11] hover:bg-lime-300 font-semibold transition">Download PDF</a>
+</div>
+</div>
+</section>
 
-      if (mainVideo && thumbnails.length > 0) {
-        thumbnails.forEach(thumb => {
-          thumb.addEventListener('click', function() {
-            // 1. Get the video path from the data-video attribute
-            const videoSrc = this.getAttribute('data-video');
+<!-- CONTACT -->
+<section id="contact" class="py-16 px-6" data-aos="fade-up">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="section-title text-3xl font-bold text-cyan-200">Reach Out</h2>
+<p class="mt-2 text-slate-400">Let's connect for internships, collaborations, and AI project discussions.</p>
 
-            // 2. Update the main video source and play it
-            mainVideo.src = videoSrc;
-            mainVideo.play();
+<div class="mt-8 grid sm:grid-cols-3 gap-4 text-left">
+<article class="rounded-xl border border-cyan-400/25 bg-black/30 p-4">
+<p class="text-xs uppercase tracking-[0.14em] text-slate-400">Email</p>
+<a class="mt-2 block text-cyan-300 underline break-all" href="mailto:poojasrikumar006@gmail.com">poojasrikumar006@gmail.com</a>
+</article>
 
-            // 3. Update active styling (remove active from all, add to clicked)
-            thumbnails.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-          });
-        });
-      }
-    });
+<article class="rounded-xl border border-cyan-400/25 bg-black/30 p-4">
+<p class="text-xs uppercase tracking-[0.14em] text-slate-400">LinkedIn</p>
+<a class="mt-2 block text-cyan-300 underline break-all" href="https://www.linkedin.com/in/poojasrikumar06" target="_blank" rel="noopener">linkedin.com/in/poojasrikumar06</a>
+</article>
 
-  </script>
+<article class="rounded-xl border border-cyan-400/25 bg-black/30 p-4">
+<p class="text-xs uppercase tracking-[0.14em] text-slate-400">GitHub</p>
+<a class="mt-2 block text-cyan-300 underline break-all" href="https://github.com/Poojasri06" target="_blank" rel="noopener">github.com/Poojasri06</a>
+</article>
+</div>
+
+<div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
+<a class="px-4 py-2 rounded-lg border border-cyan-400/40 text-slate-200 hover:border-cyan-300 hover:text-cyan-200" href="mailto:poojasrikumar006@gmail.com">Email Me</a>
+<a class="px-4 py-2 rounded-lg border border-cyan-400/40 text-slate-200 hover:border-cyan-300 hover:text-cyan-200" href="https://github.com/Poojasri06" target="_blank" rel="noopener">GitHub</a>
+<a class="px-4 py-2 rounded-lg border border-cyan-400/40 text-slate-200 hover:border-cyan-300 hover:text-cyan-200" href="https://www.linkedin.com/in/poojasrikumar06" target="_blank" rel="noopener">LinkedIn</a>
+<a class="px-4 py-2 rounded-lg border border-cyan-400/40 text-slate-200 hover:border-cyan-300 hover:text-cyan-200" href="https://medium.com/@poojasrikumar006" target="_blank" rel="noopener">Medium</a>
+</div>
+
+<div class="mt-8 rounded-2xl p-5 border border-lime-300/20 bg-lime-300/[0.04] text-left">
+<p class="text-xs uppercase tracking-[0.15em] text-lime-300">Additional Links</p>
+<div class="mt-3 flex flex-wrap gap-3 text-sm">
+<a class="text-cyan-300 hover:text-cyan-200 underline" href="#projects">Projects</a>
+<a class="text-cyan-300 hover:text-cyan-200 underline" href="#research">Research</a>
+<a class="text-cyan-300 hover:text-cyan-200 underline" href="#experience">Work</a>
+<a class="text-cyan-300 hover:text-cyan-200 underline" href="#resume">Resume</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="border-t border-white/10 text-center py-6 text-slate-400 text-sm">
+© <span id="year"></span> Poojasri Kumar — AI Portfolio
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ once: true });</script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+particles:{ number:{value:40}, color:{value:"#00D1FF"}, shape:{type:"circle"},
+opacity:{value:.35}, size:{value:2}, line_linked:{enable:true, distance:120, color:"#00D1FF", opacity:.2, width:1}, move:{enable:true, speed:1} },
+interactivity:{ events:{ onhover:{enable:true, mode:"grab"} }, modes:{ grab:{distance:140,line_linked:{opacity:.3}} } }, retina_detect:true
+});
+// Loader hide
+window.addEventListener('load',()=>{ setTimeout(()=>{ document.getElementById('loader').style.display='none'; },500); });
+// Year
+document.getElementById('year').textContent=new Date().getFullYear();
+// Cursor sparkle
+document.addEventListener("mousemove", e=>{
+let s=document.createElement("div");
+s.className="sparkle";
+s.style.left=e.pageX+"px";
+s.style.top=e.pageY+"px";
+document.body.appendChild(s);
+setTimeout(()=>s.remove(),800);
+});
+</script>
 </body>
 </html>
-
-
-
