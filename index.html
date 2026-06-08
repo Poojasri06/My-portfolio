@@ -1086,6 +1086,31 @@
       document.body.appendChild(s);
       setTimeout(()=>s.remove(),800);
     });
+        // ==========================================
+    // VIDEO PORTFOLIO SWITCHER LOGIC
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainVideo = document.getElementById('mainVideo');
+      const thumbnails = document.querySelectorAll('.video-thumb');
+
+      if (mainVideo && thumbnails.length > 0) {
+        thumbnails.forEach(thumb => {
+          thumb.addEventListener('click', function() {
+            // 1. Get the video path from the data-video attribute
+            const videoSrc = this.getAttribute('data-video');
+
+            // 2. Update the main video source and play it
+            mainVideo.src = videoSrc;
+            mainVideo.play();
+
+            // 3. Update active styling (remove active from all, add to clicked)
+            thumbnails.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+          });
+        });
+      }
+    });
+
   </script>
 </body>
 </html>
