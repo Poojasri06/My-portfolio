@@ -94,7 +94,100 @@ header.site .bar {
   align-items: baseline;
   gap: 8px;
 }
-.brand .dot { color: var(--signal); }
+.brand .dot {
+  color: var(--signal);
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1em;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.brand .dot:hover, .brand .dot:focus-visible { transform: scale(1.4); color: var(--signal-dark); }
+
+/* ---------- Wanted poster easter egg ---------- */
+.poster-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(20, 24, 26, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: posterFadeIn 0.2s ease;
+}
+.poster-overlay[hidden] { display: none; }
+@keyframes posterFadeIn { from { opacity: 0; } to { opacity: 1; } }
+.poster-card {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  background: #F1E9D2;
+  background-image: radial-gradient(rgba(28,35,31,0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  border: 2px solid var(--ink);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  padding: 28px 24px 22px;
+  text-align: center;
+  transform: rotate(-1deg);
+  animation: posterDrop 0.35s cubic-bezier(.2,.9,.3,1.2);
+}
+@keyframes posterDrop {
+  from { transform: rotate(-1deg) translateY(-18px) scale(0.96); opacity: 0; }
+  to { transform: rotate(-1deg) translateY(0) scale(1); opacity: 1; }
+}
+.poster-tape {
+  position: absolute;
+  top: -10px;
+  width: 46px;
+  height: 18px;
+  background: rgba(237,238,230,0.55);
+  border: 1px solid rgba(28,35,31,0.15);
+}
+.tape-l { left: 18px; transform: rotate(-8deg); }
+.tape-r { right: 18px; transform: rotate(7deg); }
+.poster-eyebrow {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding: 4px 0;
+  margin-bottom: 16px;
+}
+.poster-photo {
+  width: 130px; height: 130px;
+  margin: 0 auto 14px;
+  border: 2px solid var(--ink);
+  filter: grayscale(1) contrast(1.05);
+  overflow: hidden;
+}
+.poster-photo img { width: 100%; height: 100%; object-fit: cover; }
+.poster-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; }
+.poster-alias { font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); margin: 4px 0 14px; }
+.poster-charge { font-size: 0.85rem; color: var(--ink-soft); font-style: italic; margin-bottom: 16px; }
+.poster-bounty { border-top: 1px dashed var(--ink); padding-top: 12px; }
+.poster-bounty-label { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+.poster-bounty-value { display: block; font-family: var(--font-mono); font-size: 1.5rem; font-weight: 600; color: var(--signal-dark); margin: 4px 0; }
+.poster-bounty-note { display: block; font-size: 10.5px; color: var(--ink-faint); }
+.poster-foot { margin-top: 16px; font-size: 10.5px; color: var(--ink-faint); font-family: var(--font-mono); }
+.poster-close {
+  position: absolute;
+  top: -14px; right: -14px;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--panel-text);
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+}
+.poster-close:hover { background: var(--signal-dark); }
 nav.primary { display: flex; gap: 26px; }
 nav.primary a {
   font-family: var(--font-mono);
