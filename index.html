@@ -15,7 +15,7 @@
 
 <header class="site">
   <div class="bar">
-    <a class="brand" href="#home">POOJASRI KUMAR <span class="dot">●</span></a>
+    <a class="brand" href="#home">POOJASRI KUMAR <button class="dot" id="posterTrigger" aria-label="A little secret" title="curious?">●</button></a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">MENU</button>
     <nav class="primary" id="primaryNav">
       <a href="#about">About</a>
@@ -55,7 +55,7 @@
   <section id="about">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">About</span>
+        <span class="eyebrow">Arc 01 · Origin</span>
         <h2>From research paper to production.</h2>
       </div>
       <div class="about-grid reveal">
@@ -97,7 +97,7 @@
   <section id="experience">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Experience</span>
+        <span class="eyebrow">Arc 02 · Training Arc</span>
         <h2>Internships and applied work.</h2>
       </div>
       <div class="timeline reveal">
@@ -154,7 +154,7 @@
   <section id="work">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Selected Work</span>
+        <span class="eyebrow">Arc 03 · The Grand Line</span>
         <h2>Projects, from model to interface.</h2>
         <p>Independent builds across ML, computer vision, NLP, and robotics — each shipped with a working demo, not just a notebook. Client work for IGNIQ Solutions lives in the Freelance section below.</p>
       </div>
@@ -301,7 +301,7 @@
   <section id="freelance" class="panel">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Freelance &amp; Founder Work</span>
+        <span class="eyebrow">Arc 04 · The Crew</span>
         <h2>IGNIQ Solutions.</h2>
         <p>I'm the founder of IGNIQ Solutions, where I scope, build, and deliver AI-driven and web-based products for early-stage teams, student founders, and local businesses — from first client call to deployed prototype.</p>
       </div>
@@ -381,10 +381,24 @@
   </section>
 
   <!-- RESEARCH -->
-  <section id="research">
+  <section id="research" style="position:relative; overflow:hidden;">
+    <svg class="web-motif" viewBox="0 0 400 300" aria-hidden="true" style="position:absolute; top:-40px; right:-60px; width:420px; height:320px; opacity:0.16; pointer-events:none;">
+      <g stroke="var(--signal)" stroke-width="0.8" fill="none">
+        <line x1="200" y1="20" x2="200" y2="290"/>
+        <line x1="60" y1="70" x2="340" y2="240"/>
+        <line x1="60" y1="240" x2="340" y2="70"/>
+        <line x1="20" y1="155" x2="380" y2="155"/>
+        <line x1="90" y1="30" x2="310" y2="280"/>
+        <line x1="310" y1="30" x2="90" y2="280"/>
+        <circle cx="200" cy="155" r="35"/>
+        <circle cx="200" cy="155" r="70"/>
+        <circle cx="200" cy="155" r="110"/>
+        <circle cx="200" cy="155" r="150"/>
+      </g>
+    </svg>
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Research</span>
+        <span class="eyebrow">Arc 05 · Log Entry</span>
         <h2>Published work.</h2>
       </div>
       <div class="research-block reveal">
@@ -440,7 +454,7 @@
   <section id="education">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Education</span>
+        <span class="eyebrow">Arc 00 · Backstory</span>
         <h2>Foundation.</h2>
       </div>
       <div class="reveal">
@@ -462,7 +476,7 @@
   <section id="contact">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Contact</span>
+        <span class="eyebrow">Final Arc · Set Sail</span>
         <h2>Let's build something measurable.</h2>
         <p>Open to internships, collaborations, and AI project work.</p>
       </div>
@@ -488,6 +502,25 @@
   </section>
 
 </main>
+
+<div id="posterOverlay" class="poster-overlay" hidden>
+  <div class="poster-card" role="dialog" aria-label="Wanted poster">
+    <button id="posterClose" class="poster-close" aria-label="Close">×</button>
+    <div class="poster-tape tape-l"></div>
+    <div class="poster-tape tape-r"></div>
+    <div class="poster-eyebrow">Wanted</div>
+    <div class="poster-photo"><img src="assets/profile.jpg" alt="Poojasri Kumar" /></div>
+    <div class="poster-name">Poojasri Kumar</div>
+    <div class="poster-alias">a.k.a. Founder, IGNIQ Solutions</div>
+    <div class="poster-charge">Charged with: shipping models that actually ship</div>
+    <div class="poster-bounty">
+      <span class="poster-bounty-label">Bounty</span>
+      <span class="poster-bounty-value">₿ 991,420,000</span>
+      <span class="poster-bounty-note">(0.991 ROC-AUC + 94.2% accuracy, converted to berries)</span>
+    </div>
+    <div class="poster-foot">Last sighted building something in Tiruchengode. Approach with a project brief.</div>
+  </div>
+</div>
 
 <footer class="site">© Poojasri Kumar — AI/ML Portfolio</footer>
 
@@ -547,6 +580,67 @@
     });
   }
   window.addEventListener('load', animateReadouts);
+
+  // Wanted poster easter egg
+  var posterTrigger = document.getElementById('posterTrigger');
+  var posterOverlay = document.getElementById('posterOverlay');
+  var posterClose = document.getElementById('posterClose');
+  function openPoster() { posterOverlay.hidden = false; document.body.style.overflow = 'hidden'; }
+  function closePoster() { posterOverlay.hidden = true; document.body.style.overflow = ''; }
+  if (posterTrigger) {
+    posterTrigger.addEventListener('click', function (e) { e.preventDefault(); openPoster(); });
+  }
+  if (posterClose) posterClose.addEventListener('click', closePoster);
+  if (posterOverlay) {
+    posterOverlay.addEventListener('click', function (e) { if (e.target === posterOverlay) closePoster(); });
+  }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePoster(); });
+
+  // Thread-trail cursor — a fine spun-web line following the pointer (desktop, motion-safe only)
+  var isTouch = window.matchMedia('(pointer: coarse)').matches;
+  if (!reduceMotion && !isTouch) {
+    var canvas = document.createElement('canvas');
+    canvas.id = 'threadTrail';
+    canvas.style.cssText = 'position:fixed; inset:0; width:100vw; height:100vh; pointer-events:none; z-index:35;';
+    document.body.appendChild(canvas);
+    var ctx = canvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function resizeCanvas() {
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    var points = [];
+    var maxAge = 420; // ms
+    window.addEventListener('mousemove', function (e) {
+      points.push({ x: e.clientX, y: e.clientY, t: performance.now() });
+      if (points.length > 40) points.shift();
+    });
+
+    function drawTrail() {
+      var now = performance.now();
+      points = points.filter(function (p) { return now - p.t < maxAge; });
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (points.length > 1) {
+        for (var i = 1; i < points.length; i++) {
+          var p0 = points[i - 1], p1 = points[i];
+          var age = (now - p1.t) / maxAge;
+          var alpha = Math.max(0, 1 - age) * 0.28;
+          ctx.beginPath();
+          ctx.moveTo(p0.x, p0.y);
+          ctx.lineTo(p1.x, p1.y);
+          ctx.strokeStyle = 'rgba(31, 111, 92, ' + alpha.toFixed(3) + ')';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+      requestAnimationFrame(drawTrail);
+    }
+    requestAnimationFrame(drawTrail);
+  }
 </script>
 
 </body>
