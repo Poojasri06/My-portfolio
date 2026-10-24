@@ -1,322 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Poojasri Kumar - Live Resume</title>
-  <meta name="description" content="Live resume of Poojasri Kumar - AI and ML Engineer. Experience, skills, projects, and education." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poojasri Kumar | Resume — AI/ML Engineer</title>
+  <meta name="description" content="Resume of Poojasri Kumar, AI/ML Engineer: Generative AI, RAG and Python application development. Experience, skills, projects and education.">
+  <meta name="theme-color" content="#080D1D">
+  <link rel="canonical" href="https://poojasri06.github.io/My-portfolio/resume.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0f14;
-      --bg-light: #121a23;
-      --text-main: #eaf2ff;
-      --text-muted: #8ca0b8;
-      --brand: #00d1ff;
-      --accent: #a3ff12;
+      --bg: #080d1d;
+      --panel: #111a32;
+      --text: #f5f4ff;
+      --soft: #b9bfd8;
+      --muted: #8f98bd;
+      --violet: #a78bfa;
+      --amber: #fbbf24;
+      --teal: #2dd4bf;
+      --edge: #2a3766;
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html, body {
-      height: 100%;
-    }
+    * { box-sizing: border-box; }
     body {
-      font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Arial;
-      background: linear-gradient(160deg, var(--bg), var(--bg-light));
-      color: var(--text-main);
+      margin: 0;
+      padding: 40px 20px 60px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(167,139,250,.16), transparent 34%),
+        radial-gradient(circle at 95% 55%, rgba(45,212,191,.08), transparent 34%),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
       line-height: 1.6;
-      padding: 2rem 1.5rem;
+      -webkit-font-smoothing: antialiased;
     }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+    .sheet { max-width: 920px; margin: 0 auto; }
+
+    .toolbar { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-bottom: 22px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 12px;
+      border: 2px solid #04070f; background: var(--amber); color: #201506;
+      font: 700 14px var(--sans); text-decoration: none; cursor: pointer;
+      box-shadow: 4px 4px 0 var(--violet);
+      transition: transform .15s ease, box-shadow .15s ease;
     }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid rgba(0, 209, 255, 0.2);
-      padding-bottom: 1.5rem;
+    .btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--violet); }
+    .btn.ghost { background: var(--panel); color: var(--text); border-color: var(--edge); box-shadow: 4px 4px 0 rgba(45,212,191,.55); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    header.top {
+      padding: 30px 32px;
+      background: var(--panel);
+      border: 2px solid var(--edge);
+      border-radius: 16px;
+      box-shadow: 6px 6px 0 var(--violet);
     }
-    h1 {
-      font-size: 2.5rem;
-      color: var(--brand);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .tagline {
-      font-size: 1rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      font-size: 0.9rem;
-    }
-    .contact-links a {
-      color: var(--brand);
-      text-decoration: none;
-      border: 1px solid rgba(0, 209, 255, 0.3);
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
-      transition: all 0.3s;
-    }
-    .contact-links a:hover {
-      border-color: var(--brand);
-      background: rgba(0, 209, 255, 0.1);
-    }
-    section {
-      margin-bottom: 2rem;
-    }
+    h1 { margin: 0; font: 700 clamp(2.2rem, 6vw, 3.4rem)/1.05 var(--serif); letter-spacing: -.02em; }
+    h1 em { color: var(--violet); }
+    .role { margin: 8px 0 14px; font: 500 .95rem var(--mono); color: var(--amber); }
+    .links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0; padding: 0; list-style: none; font-size: .92rem; color: var(--soft); }
+    .links a { text-underline-offset: 4px; }
+    .links a:hover { color: var(--teal); }
+
+    section { margin-top: 34px; }
     h2 {
-      font-size: 1.2rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.5rem;
+      margin: 0 0 14px;
+      font: 600 .8rem var(--mono);
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--teal);
+      display: flex; align-items: center; gap: 12px;
     }
-    .experience-item {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.3);
-      border-left: 3px solid var(--brand);
-      border-radius: 4px;
+    h2::after { content: ""; flex: 1; border-top: 2px dashed var(--edge); }
+    p { margin: 0 0 10px; color: var(--soft); }
+
+    .item { padding: 0 0 20px 22px; border-left: 3px dashed var(--edge); position: relative; margin-left: 6px; }
+    .item::before {
+      content: ""; position: absolute; left: -10px; top: 6px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--bg); border: 3px solid var(--violet);
     }
-    .job-title {
-      font-weight: 700;
-      color: var(--brand);
-      font-size: 1rem;
+    .item.current::before { background: var(--amber); border-color: #04070f; box-shadow: 0 0 0 3px var(--amber); }
+    .item h3 { margin: 0; font: 600 1.15rem var(--serif); }
+    .item .org { color: var(--violet); font-weight: 600; font-size: .95rem; }
+    .item .when { float: right; font: 500 .78rem var(--mono); color: var(--muted); }
+    .item ul { margin: 8px 0 0; padding-left: 18px; color: var(--soft); }
+    .item li { margin-bottom: 4px; }
+
+    .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .skill { padding: 14px 16px; background: var(--panel); border: 2px solid var(--edge); border-radius: 12px; }
+    .skill h3 { margin: 0 0 6px; font: 600 1rem var(--serif); color: var(--text); }
+    .skill p { margin: 0; font-size: .9rem; }
+
+    .project { padding: 14px 16px; margin-bottom: 12px; background: var(--panel); border: 2px solid var(--edge); border-radius: 12px; }
+    .project h3 { margin: 0; font: 600 1.05rem var(--serif); }
+    .project .tech { margin: 2px 0 6px; font: 500 .76rem var(--mono); color: var(--muted); }
+    .project p { margin: 0; font-size: .92rem; }
+    .project a { color: var(--teal); text-underline-offset: 4px; font-size: .88rem; }
+
+    footer { margin-top: 36px; text-align: center; font-size: .85rem; color: var(--muted); }
+
+    @media (max-width: 640px) {
+      body { padding: 20px 14px 40px; }
+      header.top { padding: 22px 20px; }
+      .skills { grid-template-columns: 1fr; }
+      .item .when { float: none; display: block; margin-top: 2px; }
     }
-    .company-date {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin: 0.3rem 0;
-    }
-    .job-desc {
-      margin-top: 0.5rem;
-      color: var(--text-main);
-      font-size: 0.95rem;
-    }
-    .job-desc ul {
-      margin-left: 1.5rem;
-      margin-top: 0.5rem;
-    }
-    .job-desc li {
-      margin-bottom: 0.3rem;
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .skill-category {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 1rem;
-      border-radius: 4px;
-      border: 1px solid rgba(0, 209, 255, 0.2);
-    }
-    .skill-category h3 {
-      color: var(--brand);
-      font-size: 0.95rem;
-      margin-bottom: 0.7rem;
-      font-weight: 600;
-    }
-    .skill-category p {
-      color: var(--text-main);
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-    .education-item {
-      margin-bottom: 1rem;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 4px;
-      border-left: 3px solid var(--accent);
-    }
-    .degree {
-      font-weight: 700;
-      color: var(--brand);
-    }
-    .school {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-    .year {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-top: 0.3rem;
-    }
-    footer {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(0, 209, 255, 0.2);
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      .contact-links { flex-direction: column; }
-      .contact-links a { width: 100%; text-align: center; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+    /* ---------- print: clean white page ---------- */
+    @media print {
+      @page { margin: 14mm; }
+      body { background: #fff; color: #111; padding: 0; font-size: 10.5pt; }
+      .toolbar, footer { display: none; }
+      header.top, .skill, .project { background: #fff; border: 1px solid #bbb; box-shadow: none; }
+      p, .item ul, .links, .skill p { color: #222; }
+      h1 em { color: #5b3fd1; }
+      .role { color: #8a5a00; }
+      h2 { color: #0f766e; }
+      h2::after { border-color: #bbb; }
+      .item { border-color: #bbb; }
+      .item::before, .item.current::before { background: #fff; border-color: #5b3fd1; box-shadow: none; }
+      .item .org { color: #5b3fd1; }
+      .item .when, .project .tech { color: #555; }
+      .project a { color: #0f766e; }
+      .item, .project, .skill { break-inside: avoid; }
+      a { text-decoration: none; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- HEADER -->
-    <header>
-      <h1>Poojasri Kumar</h1>
-      <p class="tagline">AI & ML Engineer • Full-Stack Developer • LLM & Computer Vision Enthusiast</p>
-      <div class="contact-links">
-        <a href="mailto:poojasrikumar006@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/poojasrikumar06" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Poojasri06" target="_blank">GitHub</a>
-        <a href="https://medium.com/@poojasrikumar006" target="_blank">Medium</a>
-        <a href="https://poojasri06.github.io/My-portfolio/" target="_blank">Portfolio</a>
-      </div>
-    </header>
+<div class="sheet">
 
-    <!-- EXPERIENCE -->
-    <section>
-      <h2>Work Experience</h2>
-      
-      <div class="experience-item">
-        <div class="job-title">AI Research Intern</div>
-        <div class="company-date">Overload Ware Labs - AI Division · 2026</div>
-        <div class="job-desc">
-          <ul>
-            <li>Prototyped deep learning and computer vision solutions using PyTorch and OpenCV for real-world tasks.</li>
-            <li>Improved baseline model accuracy by 12% through hyperparameter tuning and architecture experiments.</li>
-            <li>Produced weekly research documentation and technical walkthroughs for the engineering team.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="job-title">Machine Learning Intern</div>
-        <div class="company-date">Prinston Smart Engineers · 2025</div>
-        <div class="job-desc">
-          <ul>
-            <li>Trained image classification and predictive ML models using Python and scikit-learn.</li>
-            <li>Built scalable data preprocessing pipelines, reducing training preparation time by 30%.</li>
-            <li>Deployed models through Flask REST APIs for real-time inference.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="job-title">Full-Stack Development Intern</div>
-        <div class="company-date">Intraq Software Technology · 2025</div>
-        <div class="job-desc">
-          <ul>
-            <li>Built FastAPI backends and data visualization dashboards integrating AI model outputs.</li>
-            <li>Optimized MongoDB queries and introduced caching, reducing API latency by 25%.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="job-title">Application Testing Intern</div>
-        <div class="company-date">Kealogics Technologies Pvt. Ltd., Bengaluru · 2026</div>
-        <div class="job-desc">
-          <ul>
-            <li>Tested AI-powered application modules and logged 40+ issues using JIRA.</li>
-            <li>Wrote and maintained test case documentation, increasing QA coverage by 20%.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURED PROJECTS -->
-    <section>
-      <h2>Featured Projects</h2>
-      
-      <div class="experience-item">
-        <div class="job-title">Career GPS</div>
-        <div class="company-date">Dec 2025 - Jan 2026</div>
-        <div class="job-desc">
-          AI-driven career navigation platform mapping skills, interests, market demand, and opportunities into actionable roadmaps for students and early professionals.
-          <strong style="color: var(--accent);">Tech:</strong> ML, NLP, Python
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="job-title">Real-Time Cryptocurrency Analytics App</div>
-        <div class="company-date">Full-Stack Development</div>
-        <div class="job-desc">
-          Full-stack crypto analytics platform with live price tracking, USD to INR conversion, and NLP-based sentiment analysis for 10 cryptocurrencies.
-          <strong style="color: var(--accent);">Tech:</strong> Python, NLP, JavaScript, Analytics
-        </div>
-      </div>
-
-      <div class="experience-item">
-        <div class="job-title">Deepfake Detection Using Deep Learning</div>
-        <div class="company-date">Research (Co-authored with Ragavi & Janani P.)</div>
-        <div class="job-desc">
-          Achieved 94.2% accuracy on FaceForensics++ benchmark using CNN and temporal consistency analysis.
-          <strong style="color: var(--accent);">Impact:</strong> Published research methodology on deepfake video detection.
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section>
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>AI & ML</h3>
-          <p>Python, PyTorch, TensorFlow, Keras, Scikit-learn, NLP (NLTK, spaCy, TextBlob), Computer Vision (OpenCV), CNN, RNN, LSTM, Transformers</p>
-        </div>
-        <div class="skill-category">
-          <h3>Development</h3>
-          <p>HTML, CSS, JavaScript, Python, FastAPI, Flask, React.js, Node.js, MongoDB, PostgreSQL, SQL</p>
-        </div>
-        <div class="skill-category">
-          <h3>Tools & DevOps</h3>
-          <p>Git & GitHub, Streamlit, Docker, JIRA, ML model deployment, Arduino, Sensors & Motor Control</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section>
-      <h2>Education</h2>
-      
-      <div class="education-item">
-        <div class="degree">B.Sc. Artificial Intelligence and Machine Learning</div>
-        <div class="school">Vivekanandha College of Arts and Science for Women, Tiruchengode</div>
-        <div class="year">2023 - 2026 | CGPA: 7.0 / 10</div>
-      </div>
-
-      <div class="education-item">
-        <div class="degree">Higher Secondary (HSC)</div>
-        <div class="school">Sowdambikaa Matriculation Higher Secondary School, Thottiyam</div>
-        <div class="year">Score: 75%</div>
-      </div>
-    </section>
-
-    <!-- ACHIEVEMENTS -->
-    <section>
-      <h2>Achievements & Activities</h2>
-      <div class="experience-item">
-        <div class="job-desc">
-          <ul>
-            <li><strong>HackOverFlow Hackathon Participant</strong> - CultRang '26, built and pitched an NLP-powered AI solution in 24 hours.</li>
-            <li><strong>Research Publication</strong> - Co-authored undergraduate research paper on deepfake detection with 94.2% benchmark accuracy.</li>
-            <li><strong>4 Internships Completed</strong> - AI research, ML engineering, full-stack development, and QA across leading tech companies.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <p>Live Resume • Last Updated March 2026 • <a href="https://github.com/Poojasri06" target="_blank" style="color: var(--brand); text-decoration: none;">View on GitHub</a></p>
-    </footer>
+  <div class="toolbar">
+    <a class="btn ghost" href="./index.html">← Back to portfolio</a>
+    <div class="btn-row">
+      <a class="btn ghost" href="./assets/PoojaSri_Resume.pdf" download>Download PDF</a>
+      <button class="btn" type="button" onclick="window.print()">Print / Save as PDF</button>
+    </div>
   </div>
+
+  <header class="top">
+    <h1>Poojasri <em>Kumar</em></h1>
+    <p class="role">AI/ML Engineer | Generative AI, RAG &amp; Python Application Development</p>
+    <ul class="links">
+      <li>Tamil Nadu, India</li>
+      <li><a href="mailto:poojasrikumar006@gmail.com">poojasrikumar006@gmail.com</a></li>
+      <li><a href="https://github.com/Poojasri06" target="_blank" rel="noopener noreferrer">github.com/Poojasri06</a></li>
+      <li><a href="https://www.linkedin.com/in/poojasrikumar06/" target="_blank" rel="noopener noreferrer">linkedin.com/in/poojasrikumar06</a></li>
+      <li><a href="https://poojasri06.github.io/My-portfolio/" target="_blank" rel="noopener noreferrer">Portfolio</a></li>
+    </ul>
+  </header>
+
+  <section aria-labelledby="summary">
+    <h2 id="summary">Summary</h2>
+    <p>
+      AI/ML Engineer with a B.Sc. in Artificial Intelligence and Machine Learning
+      (graduated 2026). Builds Python-based Generative AI and Retrieval-Augmented
+      Generation applications using FastAPI, Flask, Streamlit, FAISS and PostgreSQL.
+    </p>
+    <p>
+      Experience across AI/ML internships, AI application development,
+      deepfake-detection research, and freelance delivery of AI/ML and web
+      solutions through IGNIQ Solutions. Focuses on turning business requirements
+      into working prototypes and practical LLM-powered applications.
+    </p>
+  </section>
+
+  <section aria-labelledby="experience">
+    <h2 id="experience">Experience</h2>
+
+    <div class="item current">
+      <span class="when">Current · Onsite</span>
+      <h3>AI Full-Stack Developer Intern</h3>
+      <div class="org">Litz Technologies · Coimbatore, Tamil Nadu</div>
+      <ul>
+        <li>Apply Python, SQL, JavaScript, machine learning and deep learning to AI-driven application features.</li>
+        <li>Work across AI functionality and full-stack application development.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <span class="when">Freelance</span>
+      <h3>Founder</h3>
+      <div class="org">IGNIQ Solutions</div>
+      <ul>
+        <li>Deliver freelance AI/ML and web solutions from requirements gathering and architecture through implementation and deployment.</li>
+        <li>Client work includes the JK Sports e-commerce platform.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <span class="when">2026</span>
+      <h3>AI Developer</h3>
+      <div class="org">Kealogics Technologies</div>
+      <ul>
+        <li>Contributed to AI-powered application functionality for an educational platform.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <span class="when">2026</span>
+      <h3>HIT Foundation Buildathon</h3>
+      <div class="org">Home Ideas Technologies Pvt. Ltd.</div>
+      <ul>
+        <li>Participated in building HIT Assist, an LLM-powered support and lead-generation chatbot.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <span class="when">2026</span>
+      <h3>AI/ML Research Intern</h3>
+      <div class="org">Overload Ware Labs</div>
+    </div>
+
+    <div class="item">
+      <span class="when">2025</span>
+      <h3>Machine Learning Intern</h3>
+      <div class="org">Prinston Smart Engineers India</div>
+    </div>
+  </section>
+
+  <section aria-labelledby="skills">
+    <h2 id="skills">Technical skills</h2>
+    <div class="skills">
+      <div class="skill">
+        <h3>Generative AI</h3>
+        <p>Retrieval-Augmented Generation (RAG), Prompt Engineering, LLM Tool Calling, Claude API, FAISS, Chroma, Sentence Transformers and embeddings, Guardrails, Speech-to-Text with faster-whisper, Text Generation</p>
+      </div>
+      <div class="skill">
+        <h3>Python &amp; AI/ML</h3>
+        <p>Python, Pandas, NumPy, Matplotlib, Scikit-learn, Data Preprocessing, Feature Engineering, Deep Learning, Convolutional Neural Networks (CNN), Computer Vision</p>
+      </div>
+      <div class="skill">
+        <h3>Application Development</h3>
+        <p>FastAPI, Flask, Streamlit, REST API Development, React, Next.js</p>
+      </div>
+      <div class="skill">
+        <h3>Databases &amp; Infrastructure</h3>
+        <p>PostgreSQL, SQL, Prisma, Firestore, Firebase, Cloud Functions, Secret Manager, Vercel, Render, Git and GitHub, Role-Based Admin Access, AES-256-GCM Encryption</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="projects">
+    <h2 id="projects">Featured projects</h2>
+
+    <div class="project">
+      <h3>Voice-Enabled RAG Pipeline — Hacker House Goa 2026</h3>
+      <div class="tech">Python · FastAPI · Streamlit · faster-whisper · Sentence Transformers · FAISS</div>
+      <p>End-to-end voice-to-answer RAG application with three chunking strategies, two layers of guardrails, and a benchmarking harness for comparing retrieval quality.</p>
+    </div>
+
+    <div class="project">
+      <h3>HIT Assist — AI Support and Lead-Generation Chatbot</h3>
+      <div class="tech">React · Flask · Claude API · PostgreSQL</div>
+      <p>LLM-powered chatbot using tool calling for intent detection and lead extraction, with SMTP email notifications and an admin panel. Deployed on Vercel and Render. Uses direct knowledge-base injection for a small, static knowledge base rather than adding vector-database complexity.</p>
+    </div>
+
+    <div class="project">
+      <h3>CallPilot AI — Voice AI SaaS Dashboard</h3>
+      <div class="tech">Next.js 14 · Twilio · PostgreSQL · Prisma · Anthropic/OpenAI adapter</div>
+      <p>Voice AI SaaS dashboard scaffold developed in three build phases, with a provider-agnostic LLM adapter so model providers can be switched without rewriting the application integration.</p>
+    </div>
+
+    <div class="project">
+      <h3>JK Sports E-Commerce Platform</h3>
+      <div class="tech">Firebase · Cloud Functions · Razorpay</div>
+      <p>Client e-commerce platform with Razorpay and cash-on-delivery checkout and an admin dashboard for products, orders, shipments and payments.</p>
+      <a href="https://github.com/Poojasri06/jk-sports" target="_blank" rel="noopener noreferrer">github.com/Poojasri06/jk-sports</a>
+    </div>
+
+    <div class="project">
+      <h3>Deepfake Detection Research</h3>
+      <div class="tech">CNN · Facial landmark tracking · FaceForensics++</div>
+      <p>Co-authored deepfake-detection research using CNNs and facial landmark tracking, reporting 94.2% accuracy on the FaceForensics++ benchmark.</p>
+      <a href="https://github.com/Poojasri06/Deepfake-video-detection" target="_blank" rel="noopener noreferrer">github.com/Poojasri06/Deepfake-video-detection</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="education">
+    <h2 id="education">Education</h2>
+    <div class="item">
+      <span class="when">Graduated May 2026</span>
+      <h3>B.Sc. Artificial Intelligence and Machine Learning</h3>
+      <div class="org">Vivekanandha College of Arts and Science for Women (Autonomous) · Tiruchengode, Tamil Nadu</div>
+      <p>CGPA: 7.4/10</p>
+    </div>
+  </section>
+
+  <footer>© 2026 Poojasri Kumar</footer>
+</div>
 </body>
 </html>
