@@ -729,6 +729,65 @@ section { padding: 100px 0; border-bottom: 2px solid #1c2748; }
 .contact-card a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .contact-cta { margin-top: 40px; }
 
+/* ---------- audience chooser (landing page) ---------- */
+
+.choose-hero { min-height: calc(100vh - 70px); display: flex; align-items: center; }
+.choose-intro { max-width: 720px; margin-bottom: 44px; }
+.choose-intro .lead { margin-bottom: 0; }
+.choose-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+.choose-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px 26px;
+  background: var(--panel);
+  border: var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: 7px 7px 0 var(--c, var(--violet));
+  color: var(--text);
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.choose-card:hover { transform: translate(-3px,-3px); box-shadow: 11px 11px 0 var(--c, var(--violet)); }
+.choose-tag { color: var(--c); font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; }
+.choose-card h2 { margin: 10px 0 10px; font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.1; }
+.choose-card p { margin: 0 0 22px; color: var(--text-soft); }
+.choose-go { margin-top: auto; color: var(--c); font-weight: 700; }
+.choose-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 34px 0 0; padding: 0; list-style: none; }
+.choose-links a { color: var(--text-soft); text-underline-offset: 4px; }
+.choose-links a:hover { color: var(--teal); }
+
+/* ---------- process steps (business page) ---------- */
+
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin: 0; padding: 0; list-style: none; }
+.steps li {
+  padding: 22px 20px;
+  background: var(--panel);
+  border: var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: 5px 5px 0 rgba(45,212,191,.6);
+}
+.steps li:nth-child(even) { box-shadow: 5px 5px 0 rgba(167,139,250,.65); }
+.step-num {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--amber);
+  color: #201506;
+  border: 2px solid var(--ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+.steps h3 { margin: 14px 0 6px; font-size: 1.2rem; }
+.steps p { margin: 0; color: var(--text-soft); font-size: .93rem; }
+
+@media (max-width: 1020px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 820px) {
+  .choose-grid, .steps { grid-template-columns: 1fr; }
+  .choose-hero { min-height: 0; padding: 56px 0 72px; }
+}
+
 /* ---------- wanted poster easter egg ---------- */
 
 .poster-overlay {
